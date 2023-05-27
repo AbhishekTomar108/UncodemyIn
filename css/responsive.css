@@ -1,0 +1,59 @@
+
+
+
+
+/* media query max-width 900px */
+
+
+
+@media screen and (max-width:900px){
+
+    .container{
+        width: 98vw;
+    }
+
+    /* Banner-style-css */
+    .banner-section{
+        flex-direction: column;
+    }
+
+    .banner-right-box {
+        width: auto;
+    }
+
+    .btn-container button{
+        width: 45%;
+    }
+    .btn-container{
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    /* Awards-recognition-style-css */
+
+    .awards-section{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 30px;
+    }
+
+    .awards-thumb{
+        width: auto;
+    }
+
+
+    /* Career-Section-style-css */
+
+    .career-section-thumb{
+        flex-direction: column;
+    }
+
+    .career-session-right-box{
+        width: auto;
+    }
+
+    .numbers-container{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
