@@ -115,6 +115,7 @@ ul{
 /* Award-container-style-css */
 
 .awards-recognition-container{
+    width: 76vw;
     margin-top: 100px;
     position: relative;
 }
@@ -324,7 +325,7 @@ width: 125px;
 /* Scalar-Recipe-style-css */
 
 .scalar-recipe-container{
-    margin-top: 50px;
+    margin-top: 150px;
 }
 .scaler-reciper-card{
     position: relative;
@@ -406,7 +407,7 @@ background: #e8f2ff;
 
 .certificate-container{
            
-            margin-top: 100px;
+            margin-top: 150px;
             background: #ff5421;
             color: white;
 }
@@ -415,7 +416,7 @@ background: #e8f2ff;
     margin: 50px auto;
     display: flex;
     width: 90%;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .with-partner{
@@ -432,7 +433,7 @@ background: #e8f2ff;
 }
 
 .certificate-detail ul li{
-    height: 50px;
+    height: 40px;
     display: flex;
     margin-bottom: 30px;
     align-items: center;
@@ -466,30 +467,37 @@ background: #e8f2ff;
 /* review-container-style-css */
 
 .review-container{
-    width: 95vw;
+    width: 90vw;
+    margin-top: 100px;
 }
 
 .review-card-section{
 
     display: grid;
+    row-gap: 20px;
     grid-template-columns: auto auto;
+    justify-items: center;
 }
 
 .review-card{
+    padding: 30px 10px;
+    width: 90%;
     display: flex;
     border-radius: 8px;
-    background-color: #6b12a3;
+    background-color: #7406D7;
     color: white;
     border: 1px solid #ededed;
-    box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16)
+    box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16);
+    align-items: center;
 }
 
 .learner-img-box{
-
+padding: 0 20px;
 }
 
 .learner-img-box img{
     width: 100%;
+    border-radius: 50%;
 }
 
 .placement-company{
@@ -498,6 +506,9 @@ background: #e8f2ff;
     height: 12px;
     width: fit-content;
     padding: 10px;
+    background-color: white;
+    border-radius: 50px;
+    column-gap: 20px;
 }
 
 .placement-company img{
@@ -506,7 +517,156 @@ background: #e8f2ff;
 
 .placement-company span{
     font-size: 12px;
+    color: black;
+}
+
+.name-placement{
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.review-card p{
+    font-size: 14px;
+}
+
+.card-2{
+    background-color: #458d99;
+}
+
+.card-1{
+    background-color: #9254b9;
+}
+
+.card-3{
+    background-color: #df6262;
+}
+
+.card-4{
+    background-color: #df9454;
 }
 
 
+/* alumni-container-style-css */
 
+
+.alumni-container{
+    margin-top: 150px;
+    width: 80vw;
+}
+
+.alumni-detail-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.alumni-group-img-section{
+    background-image: url('../image/alumni.webp');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 30%;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.alumni-number{
+    position: relative;
+    width: fit-content;
+}
+
+.alumni-number::before{
+position: absolute;
+    content: "+";
+    color: white;
+    top: -15px;
+    right: -20px;
+}
+
+.alumni-img-section{
+    height: 300px;
+}
+
+.alumni-img-section img{
+    height: 100%;
+}
+
+.alumni-review-section{
+    width:35%;
+}
+
+.above-line-alumni{
+    position: relative;
+}
+
+
+.above-line-alumni::before{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background: #ff5124;
+    top: -8px;
+}
+
+.alumni-review-section i{
+    font-size: 40px;
+    color: #ff5124;
+}
+
+
+/* career-session-style-css */
+
+/* .career-image-section{
+    width: 35%;
+} */
+
+
+.career-image-section img{
+    width: 100%;
+}
+
+.career-session-container{
+    display: flex;
+    column-gap: 100px;
+    width: 80vw;
+    margin-bottom: 100px;
+    margin-top: 150px;
+}
+
+.detail{
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 50px;
+
+}
+
+.career-session-container h3{
+    margin: 10px;
+}
+
+.detail h3{
+    margin: 0;
+}
+
+.detail i{
+    color: #ff5124;
+    display: flex;
+    font-size: 40px;
+    align-items: center;
+}
+
+.session-detail{
+    margin-top: 50px;
+}
+
+.session-detail p{
+    color: grey;
+}
+
+.icon-section{
+    min-width: 75px;
+}
