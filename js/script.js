@@ -23,3 +23,64 @@ function addEventListenerToCourse(index) {
     courseElement.setAttribute("id", "check");
   });
 }
+
+const movealumniright  =()=>{
+  console.log('moving running')
+
+  const totalAlumniLenght  = document.getElementsByClassName('alumni-image-thumb').length;
+  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
+  // console.log('move image ',MovedImage)
+
+  const alumni = document.querySelector('.alumni-image-detail-section');
+  const computedStyle = window.getComputedStyle(alumni);
+  const leftValue = computedStyle.getPropertyValue('left');
+
+  const alumniWidth  = alumni.clientWidth;
+  console.log('width of section =',alumni.clientWidth)
+
+  const totalWidthToMove = (totalAlumniLenght-1)*alumniWidth;
+  const currentMove = Math.abs(parseInt(leftValue));
+  console.log('total width ',totalWidthToMove)
+  console.log(currentMove)
+
+  if((currentMove)>=totalWidthToMove){
+    console.log('if =',currentMove,totalWidthToMove)
+    alumni.style.left = `${(0)}px`
+  }
+
+  else{
+    console.log('else =',currentMove,totalWidthToMove)
+    alumni.style.left = `${(-currentMove-alumniWidth)}px`
+  } 
+   
+}
+const movealumnileft  =()=>{
+  console.log('moving running')
+
+  const totalAlumniLenght  = document.getElementsByClassName('alumni-image-thumb').length;
+  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
+  // console.log('move image ',MovedImage)
+
+  const alumni = document.querySelector('.alumni-image-detail-section');
+  const computedStyle = window.getComputedStyle(alumni);
+  const leftValue = computedStyle.getPropertyValue('left');
+
+  const alumniWidth  = alumni.clientWidth;
+  console.log('width of section =',alumni.clientWidth)
+
+  const totalWidthToMove = (totalAlumniLenght-1)*alumniWidth;
+  const currentMove = Math.abs(parseInt(leftValue));
+  console.log('total width ',totalWidthToMove)
+  console.log(currentMove)
+
+  if((currentMove)<=0){
+    console.log('if =',currentMove,totalWidthToMove)
+    alumni.style.left = `${(-totalWidthToMove)}px`
+  }
+
+  else{
+    console.log('else =',currentMove,totalWidthToMove)
+    alumni.style.left = `${(-currentMove+alumniWidth)}px`
+  } 
+   
+}

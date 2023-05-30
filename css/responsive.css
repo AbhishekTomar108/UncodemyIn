@@ -8,6 +8,14 @@
 
 @media screen and (max-width:900px){
 
+    h2{
+        font-size: 17px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
     .container{
         width: 98vw;
     }
@@ -25,8 +33,16 @@
         width: 45%;
     }
     .btn-container{
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin-bottom: 30px;
+    }
+
+    .associate-logo{
+        justify-content: space-around;
+    }
+
+    .certified-logo{
+        justify-content: space-around;
     }
 
     /* Awards-recognition-style-css */
@@ -55,5 +71,186 @@
     .numbers-container{
         display: grid;
         grid-template-columns: auto auto;
+    }
+
+    .course-card-thumb{
+        grid-template-columns: none;
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    .course-card-container{
+        height: 400px;
+        overflow: scroll;
+    }
+
+    .course-name-section ul li{
+        width: fit-content;
+        font-size: 12px;
+        padding: 5px;
+       
+    }
+
+    .course-name-section ul{
+        border: none;
+        box-shadow: none;
+    }
+
+    .course-name-container{
+        max-width: 150px;
+    }
+
+    .course-card-section{
+        width: auto;
+    }
+
+    .logo{
+        height: 15px;
+    }
+
+    .course-card-section p{
+        font-size: 12px;
+    }
+
+    .time-month-student{
+        font-size: 12px;
+    }
+
+
+    .scalar-recipe-card-section{
+     
+        flex-direction: column;
+        width: auto;
+        row-gap: 80px;
+        align-items: center;
+    }
+
+    .scalar-recipe-container{
+        margin-top: 50px;
+    }
+
+    .partner-company-img-container img{
+
+        /* height: 30px; */
+    }
+
+    .certificate-right-box-container{
+        width: auto;
+    }
+
+    .certificate-section{
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    /* ------- review-container ------*/
+
+
+    .review-card-section{
+          
+            flex-direction: column;
+            display: flex;
+    }
+
+    .review-card{
+        position: relative;
+        width: auto;
+        padding: 0;
+        flex-direction: column;
+        align-items: initial;
+    }
+
+    .name-placement{
+        position: absolute;
+        top: 40px;
+        right: 30px;
+        flex-direction: column;
+        font-size: 12px;
+        row-gap: 20px;
+    }
+
+    .learner-img-box{
+        width: 40%;
+    }
+
+    .placement-company span{
+        font-size: 10px;
+    }
+
+    .placement-company img{
+        height: 65%;
+    }
+    .placement-company
+    {
+        height: 10px;
+    }
+
+    .review-card p{
+        font-size: 12px;
+        padding: 0 30px;
+    }
+    
+
+      /* ------- alumni-container ------*/
+    .alumni-detail-container{
+        flex-direction: column-reverse;
+    }
+
+    .alumni-group-img-section{
+        width: auto;
+    }
+
+    .alumni-image-detail-container{
+        width: 98vw;
+    }
+
+    .alumni-image-thumb{
+        flex-direction: column ;
+    }
+
+    .alumni-image-thumb p{
+        font-size: 12px;
+        padding: 0 20px;
+    }
+
+    .alumni-img-section{
+        width: auto;
+    }
+
+    .right-left-arrow{
+        margin-bottom: 30px;
+    }
+
+    .alumni-review-section{
+        width: auto;
+    }
+
+    .dash-line{
+        margin: 0 15px 0 15px;
+    }
+
+    .career-image-section{
+        display: none;
+    }
+
+    .companies-img-container{
+        padding: 20px 0;
+    }
+
+    .companies-img-container img{
+        height: 15px;
+    }
+
+    .review-container{
+        margin-top: 50px;
+    }
+
+}
+
+
+@media screen and (max-width:365px)
+{
+    .certified-logo img{
+        width: 6%;
     }
 }

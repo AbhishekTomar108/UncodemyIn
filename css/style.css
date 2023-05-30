@@ -39,10 +39,10 @@ ul{
 
 /* Banner-style-css */
 
-/* .banner-container{
+.banner-container{
     width: 80vw;
-    margin: auto;
-} */
+   
+}
 
 .banner-section{
     display: flex;
@@ -50,6 +50,7 @@ ul{
 
 .banner-right-box{
     width: 50%;
+    height: fit-content;
 }
 .banner-left-box{
     display: flex;
@@ -57,10 +58,49 @@ ul{
     justify-content: center;
 }
 
-.banner-right-box img{
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 18px rgba(24,39,75,.1);
+
+
+.associate-logo {
+    align-items: center;
+    border-radius: 8px;
+    -webkit-column-gap: 20px;
+    column-gap: 20px;
+    display: flex;
+}
+
+.associate-logo img{
+    width: 20%;
+}
+
+.banner-logo{   
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: -30px;
+}
+
+.dash-line {
+    background: #000;
+    height: 2px;
+    margin: 0 30px 0 45px;
+    width: 5px;
+}
+
+.certified-logo {
+    align-items: center;
+    -webkit-column-gap: 15px;
+    column-gap: 15px;
+    display: flex;
+}
+
+.certified-logo img {
+    width: 12%;
+}
+
+.banner{
+    background-color: #f7fafe;
+    padding-bottom: 50px;
 }
 
 .btn-container button{
@@ -102,6 +142,7 @@ ul{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
 }
 
 .partner-company-img-container{
@@ -211,7 +252,8 @@ width: 125px;
 .explore-courses-container{
     display: flex;
     margin-top: 50px;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: auto;
 }
 
 .course-card-thumb{
@@ -340,7 +382,7 @@ width: 125px;
 }
 
 .card-1{
-    background:  #e8f2ff;
+    background-color: #dba3ff;
     /* position: relative; */
 }
 
@@ -348,7 +390,7 @@ width: 125px;
     color: #3988ff;
 }
 .scaler-reciper-card span{
-    color: grey;
+    color: white;
 }
 
 /* .card-1::after{
@@ -410,6 +452,7 @@ background: #e8f2ff;
             margin-top: 150px;
             background: #ff5421;
             color: white;
+            width: auto;
 }
 .certificate-section{
     display: flex;
@@ -464,6 +507,25 @@ background: #e8f2ff;
     border: 10px solid #992300;
 }
 
+
+/* ------ best-companies component ------- */
+
+
+.companies-img-container{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(24,39,75,.05);
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px 20px;
+    justify-content: space-around;
+    row-gap: 20px;
+}
+
+.companies-img-container img{
+    height: 30px;
+}
+
 /* review-container-style-css */
 
 .review-container{
@@ -493,6 +555,14 @@ background: #e8f2ff;
 
 .learner-img-box{
 padding: 0 20px;
+}
+
+.right-left-arrow i{
+
+  font-size: 40px;
+background-color: #ff5124;
+color: white;
+cursor: pointer;
 }
 
 .learner-img-box img{
@@ -531,15 +601,15 @@ padding: 0 20px;
 }
 
 .card-2{
-    background-color: #458d99;
+    background-color: #dea9ff;
 }
 
 .card-1{
-    background-color: #9254b9;
+    background-color: #adcdff;
 }
 
 .card-3{
-    background-color: #df6262;
+    background-color: #ffab89;
 }
 
 .card-4{
@@ -552,12 +622,12 @@ padding: 0 20px;
 
 .alumni-container{
     margin-top: 150px;
-    width: 80vw;
+    /* width: 80vw; */
 }
 
 .alumni-detail-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .alumni-group-img-section{
@@ -566,7 +636,6 @@ padding: 0 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
     width: 30%;
     color: white;
     border-radius: 10px;
@@ -587,15 +656,39 @@ position: absolute;
 }
 
 .alumni-img-section{
-    height: 300px;
+  width: 300px;
 }
 
 .alumni-img-section img{
     height: 100%;
+    width: 100%;
+}
+
+.right-left-arrow{
+    float: right;
 }
 
 .alumni-review-section{
-    width:35%;
+    width:400px;
+}
+
+.alumni-image-detail-section{
+    position: relative;
+    display: flex;
+    left: 0%;
+    transition: left .3s;
+
+}
+
+.alumni-image-thumb{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.alumni-image-detail-container{
+    width: 67%;
+    overflow: hidden;
 }
 
 .above-line-alumni{
@@ -614,7 +707,9 @@ position: absolute;
 
 .alumni-review-section i{
     font-size: 40px;
-    color: #ff5124;
+    background-color: #ff5124;
+    color: white;
+    cursor: pointer;
 }
 
 
@@ -627,6 +722,7 @@ position: absolute;
 
 .career-image-section img{
     width: 100%;
+    height: 100%;
 }
 
 .career-session-container{
@@ -669,4 +765,18 @@ position: absolute;
 
 .icon-section{
     min-width: 75px;
+}
+
+.explore-btn{
+    text-align: center;
+    border: 1px solid #ff5421;
+    color: #ff5421;
+    padding: 15px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.explore-btn:hover{
+    background-color: #ff5421;
+    color: white !important;
 }
