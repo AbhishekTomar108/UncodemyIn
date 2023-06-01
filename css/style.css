@@ -598,7 +598,28 @@ cursor: pointer;
 
 .review-card p{
     font-size: 14px;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.5em; /* Adjust the line height as needed */
+    max-height: 4.5em;
 }
+
+.review-card p::after{
+   
+        cursor: pointer;
+        content: "show more"; /* The ellipsis symbol */
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        color: black;
+        padding-left: 5px; /* Add some space between the ellipsis and the last visible character */
+         /* Ensure the ellipsis is visible */
+      }
+
+      .expanded {
+        max-height: none !important;
+      }
+
 
 .card-2{
     background-color: #dea9ff;

@@ -84,3 +84,41 @@ const movealumnileft  =()=>{
   } 
    
 }
+
+
+// function to limit the text in paragraph
+
+const selector  = "review-text"
+const maxLength  = 50;
+
+function truncateText(selector,maxLength) {
+
+  console.log('truncate is running')
+
+  var element = document.querySelectorAll(selector)
+  console.log('length =',element.length)
+  for(let i=0; i<element.length; i++)
+  {
+    truncated = element[i].innerText;
+    console.log('truncate text =',truncated)
+
+    if (truncated.length > maxLength) {
+        truncated = truncated.substr(0,maxLength) + '...';
+    }
+  
+    element[i].innerText =  truncated
+  }
+   
+  // return truncated;
+}
+
+// window.onload = function() {
+//   truncateText(".review-text", 300);
+//   // console.log('Truncated text:', result);
+// };
+
+function expandText(index) {
+  console.log('expanding')
+  var textElement = document.getElementsByClassName('review-text')[index];
+  textElement.classList.toggle('expanded');
+}
