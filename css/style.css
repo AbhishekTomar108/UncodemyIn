@@ -651,6 +651,17 @@ cursor: pointer;
     justify-content: space-evenly;
 }
 
+    #videoContainer {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        top: 0;
+        left: 50%;
+        left: 30%;
+        display: none;
+
+}
+
 .alumni-group-img-section{
     background-image: url('../image/alumni.webp');
     display: flex;

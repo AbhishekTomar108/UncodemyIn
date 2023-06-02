@@ -122,3 +122,33 @@ function expandText(index) {
   var textElement = document.getElementsByClassName('review-text')[index];
   textElement.classList.toggle('expanded');
 }
+
+
+// code to run yt video
+
+
+
+// Global variable to store the YouTube player object
+// Function to load the YouTube player
+// function loadYouTubePlayer() {
+//   // Create an iFrame element
+//   var iframe = document.createElement('iframe');
+
+//   // Set the source of the iFrame to the YouTube video URL
+//   iframe.src = 'https://www.youtube.com/embed?v=Sg8XVnCneXE';
+
+//   // Set the width and height of the iFrame
+//   iframe.width = '640';
+//   iframe.height = '360';
+
+//   // Append the iFrame to a container element
+//   var container = document.getElementById('videoContainer');
+//   container.appendChild(iframe);
+// }
+
+// // Attach the click event listener to the button
+// var playButton = document.getElementById('playButton');
+// playButton.addEventListener('click', function() {
+//   console.log('play is running  ')
+//   loadYouTubePlayer();
+// });
