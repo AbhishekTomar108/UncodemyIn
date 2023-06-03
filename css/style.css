@@ -599,26 +599,31 @@ cursor: pointer;
 .review-card p{
     font-size: 14px;
     overflow: hidden;
+    margin-bottom: 0;
     position: relative;
     line-height: 1.5em; /* Adjust the line height as needed */
     max-height: 4.5em;
 }
 
-.review-card p::after{
+.learner-review-detail .show-hide{
+    color: black;
+    cursor: pointer;
+}
+
+/* .review-card p::after{
    
         cursor: pointer;
-        content: "show more"; /* The ellipsis symbol */
+        content: "show more";
         position: absolute;
         bottom: 0px;
         right: 0;
         color: black;
-        padding-left: 5px; /* Add some space between the ellipsis and the last visible character */
-         /* Ensure the ellipsis is visible */
-      }
+        padding-left: 5px; 
+      } */
 
-      .expanded {
+      /* .expanded {
         max-height: none !important;
-      }
+      } */
 
 
 .card-2{
@@ -655,11 +660,46 @@ cursor: pointer;
         display: flex;
         position: fixed;
         justify-content: center;
-        top: 0;
-        left: 50%;
-        left: 30%;
+        top: 15%;
+        z-index: 9999;
+        left: 25%;
         display: none;
+        width: 50vw;
 
+}
+
+#videoContainer iframe{
+    width: 100%;
+    height: 400px;
+}
+
+#videoContainer i{
+    position: absolute;
+    right: 0px;
+    font-size: 30px;
+    cursor: pointer;
+    
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    backdrop-filter: blur(5px);
+  }
+
+.watch-video-section{
+    background: #ff5421;
+    width: fit-content;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
 .alumni-group-img-section{
@@ -713,6 +753,7 @@ position: absolute;
 }
 
 .alumni-image-thumb{
+    position: relative;
     min-width: 100%;
     display: flex;
     justify-content: space-evenly;

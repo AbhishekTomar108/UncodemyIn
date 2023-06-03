@@ -192,6 +192,22 @@
     
 
       /* ------- alumni-container ------*/
+
+
+      #videoContainer{
+        width: 95vw;
+        height: 300px;
+        padding: 5px;
+        background-color: white;
+        left: 0;
+        right: 0;
+      }
+
+      #videoContainer iframe{
+        height: 100%;
+        width: 100%;
+      }
+
     .alumni-detail-container{
         flex-direction: column-reverse;
     }

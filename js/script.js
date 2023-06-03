@@ -100,7 +100,7 @@ function truncateText(selector,maxLength) {
   for(let i=0; i<element.length; i++)
   {
     truncated = element[i].innerText;
-    console.log('truncate text =',truncated)
+    console.log('truncate text =',truncated.length)
 
     if (truncated.length > maxLength) {
         truncated = truncated.substr(0,maxLength) + '...';
@@ -109,20 +109,66 @@ function truncateText(selector,maxLength) {
     element[i].innerText =  truncated
   }
    
-  // return truncated;
+  return truncated;
 }
 
-// window.onload = function() {
-//   truncateText(".review-text", 300);
-//   // console.log('Truncated text:', result);
-// };
+window.onload = function() {
+  truncateText(".review-text", 300);
+  // console.log('Truncated text:', result);
+};
 
 function expandText(index) {
   console.log('expanding')
-  var textElement = document.getElementsByClassName('review-text')[index];
-  textElement.classList.toggle('expanded');
+  var textElement = document.getElementsByClassName('review-text')[index].innerText;
+  let showHideText = document.getElementsByClassName('show-hide')[index];
+
+  const maxLength = 300;
+
+  if(showHideText.innerText==="show more..."){
+    showHideText.innerText="show less"
+  }
+
+  else{
+    showHideText.innerText="show more..."
+  }
+
+  if (textElement.length > maxLength) {
+    textElement = textElement.substr(0,maxLength) + '...';
+}
+else{
+  console.log('textelement is running')
+  textElement = textElement.substr(0,textElement.length)
+}
+  // textElement.classList.toggle('expanded');
 }
 
+
+function showVideo(){
+  document.getElementById('videoContainer').style.display="block"
+  var myFrame = videoContainer.querySelector("iframe");
+  myFrame.src = "https://www.youtube.com/embed/N6KsC9Y00M8";
+  document.getElementById('overlay').style.display="block"
+}
+
+function hideVideo(){
+  console.log('hiding')
+  document.getElementById('videoContainer').style.display="none"
+  document.getElementById('overlay').style.display="none"
+  var myFrame = videoContainer.querySelector("iframe");
+  myFrame.src = ""; 
+}
+
+// function toggleIframe() {
+//   var videoContainer =  document.getElementById('videoContainer');
+  
+  
+//   if (videoContainer.style.display==="none") {
+//     videoContainer.style.display = "block";
+//   } else {
+//     videoContainer.style.display = "none";
+//     myFrame.src = ""; // Clear the iframe source when hiding it
+//   }
+// }
 
 // code to run yt video
 
