@@ -91,54 +91,70 @@ const movealumnileft  =()=>{
 const selector  = "review-text"
 const maxLength  = 50;
 
-function truncateText(selector,maxLength) {
+// function truncateText(selector,maxLength) {
 
-  console.log('truncate is running')
+//   console.log('truncate is running')
 
-  var element = document.querySelectorAll(selector)
-  console.log('length =',element.length)
-  for(let i=0; i<element.length; i++)
-  {
-    truncated = element[i].innerText;
-    console.log('truncate text =',truncated.length)
+//   var element = document.querySelectorAll(selector)
+//   console.log('length =',element.length)
+//   for(let i=0; i<element.length; i++)
+//   {
+//     truncated = element[i].innerText;
+//     console.log('truncate text =',truncated.length)
 
-    if (truncated.length > maxLength) {
-        truncated = truncated.substr(0,maxLength) + '...';
-    }
+//     if (truncated.length > maxLength) {
+//         truncated = truncated.substr(0,maxLength) + '...';
+//     }
   
-    element[i].innerText =  truncated
-  }
+//     element[i].innerText =  truncated
+//   }
    
-  return truncated;
-}
+//   return truncated;
+// }
 
 window.onload = function() {
   truncateText(".review-text", 300);
   // console.log('Truncated text:', result);
 };
 
+
 function expandText(index) {
-  console.log('expanding')
-  var textElement = document.getElementsByClassName('review-text')[index].innerText;
+  var targetElement = document.getElementById('review-text-' + index);
   let showHideText = document.getElementsByClassName('show-hide')[index];
-
+  
   const maxLength = 300;
-
-  if(showHideText.innerText==="show more..."){
-    showHideText.innerText="show less"
+  
+  if (showHideText.innerText === "show more...") {
+    showHideText.innerText = "show less";
+  } else {
+    showHideText.innerText = "show more...";
   }
-
-  else{
-    showHideText.innerText="show more..."
+  
+  console.log('target element outside if-else', targetElement.style.height);
+  
+  var computedStyle = window.getComputedStyle(targetElement);
+  var currentHeight = computedStyle.getPropertyValue('height');
+  
+  if (currentHeight === '67px') {
+    console.log('target element', currentHeight);
+    targetElement.style.height = 'auto';
+  } else {
+    targetElement.style.height = '67px';
   }
+  
 
-  if (textElement.length > maxLength) {
-    textElement = textElement.substr(0,maxLength) + '...';
-}
-else{
-  console.log('textelement is running')
-  textElement = textElement.substr(0,textElement.length)
-}
+
+
+//   if (textElement.length > maxLength) {
+//     console.log('if substr', index, textElement.length,textElement)
+//     // textElement = textElement.substr(0,maxLength) + '...';
+//     textElement = textElement.substr(0,maxLength) + '...';
+// }
+// else{
+//   console.log('if substr', index)
+//   console.log('textelement is running')
+//   textElement = textElement.substr(0,textElement.length)
+// }
   // textElement.classList.toggle('expanded');
 }
 
