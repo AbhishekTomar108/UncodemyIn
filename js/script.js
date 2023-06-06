@@ -24,6 +24,67 @@ function addEventListenerToCourse(index) {
   });
 }
 
+const certificateRight = ()=>{
+
+
+  const totalCertificateLenght  = document.getElementsByClassName('certicate-image').length;
+  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
+  // console.log('move image ',MovedImage)
+
+  const certificate = document.querySelector('.certificate-right-box');
+  const computedStyle = window.getComputedStyle(certificate);
+  const leftValue = computedStyle.getPropertyValue('left');
+
+  const certificateWidth  = certificate.clientWidth;
+  console.log('width of section =',certificate.clientWidth)
+
+  const totalWidthToMove = (totalCertificateLenght-1)*certificateWidth;
+  const currentMove = Math.abs(parseInt(leftValue));
+  console.log('total width ',totalWidthToMove)
+  console.log(currentMove)
+
+  if((currentMove)>=totalWidthToMove){
+    console.log('if =',currentMove,totalWidthToMove)
+    certificate.style.left = `${(0)}px`
+  }
+
+  else{
+    console.log('else =',currentMove,totalWidthToMove)
+    certificate.style.left = `${(-currentMove-certificateWidth)}px`
+  } 
+}
+
+const certificateLeft = ()=>{
+
+
+  const totalCertificateLenght  = document.getElementsByClassName('certicate-image').length;
+  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
+  // console.log('move image ',MovedImage)
+
+  const certificate = document.querySelector('.certificate-right-box');
+  const computedStyle = window.getComputedStyle(certificate);
+  const leftValue = computedStyle.getPropertyValue('left');
+
+  const certificateWidth  = certificate.clientWidth;
+  console.log('width of section =',certificate.clientWidth)
+
+  const totalWidthToMove = (totalCertificateLenght-1)*certificateWidth;
+  const currentMove = Math.abs(parseInt(leftValue));
+  console.log('total width ',totalWidthToMove)
+  console.log(currentMove)
+
+  if((currentMove)<=0){
+    console.log('if =',currentMove,totalWidthToMove)
+    certificate.style.left = `${(-totalWidthToMove)}px`
+  }
+
+  else{
+    console.log('else =',currentMove,totalWidthToMove)
+    certificate.style.left = `${(-currentMove+certificateWidth)}px`
+  }  
+}
+
+
 const movealumniright  =()=>{
   console.log('moving running')
 
@@ -161,16 +222,24 @@ function expandText(index) {
 
 function showVideo(){
   document.getElementById('videoContainer').style.display="block"
+  document.getElementById('videoContainer').style.top="20%"
+
+  document.body.style.overflow='hidden'
   var myFrame = videoContainer.querySelector("iframe");
   myFrame.src = "https://www.youtube.com/embed/N6KsC9Y00M8";
   document.getElementById('overlay').style.display="block"
+  // videoContainer.classList.add('show');
 }
 
 function hideVideo(){
   console.log('hiding')
   document.getElementById('videoContainer').style.display="none"
+  document.getElementById('videoContainer').style.top="0"
+  document.body.style.overflow='auto'
   document.getElementById('overlay').style.display="none"
   var myFrame = videoContainer.querySelector("iframe");
+
+
   myFrame.src = ""; 
 }
 

@@ -13,6 +13,11 @@ button{
     font-weight: 700;
 }
 
+::selection {
+    background-color: #ff5421;
+    color: white; /* Replace with your desired background color */
+  }
+
 .container{
     width: 90vw;
     margin: auto;
@@ -24,6 +29,7 @@ button{
 
 ul li{
     list-style: none;
+    cursor: pointer;
 }
 ul{
     padding: 0;
@@ -35,6 +41,10 @@ ul{
     background-color: #ff5124;
     height: 70px;
     margin-bottom: 30px;
+}
+
+h2{
+
 }
 
 /* Banner-style-css */
@@ -78,6 +88,10 @@ ul{
     justify-content: center;
     margin-bottom: 25px;
     margin-top: -30px;
+}
+
+.banner-logo img{
+    width: 100%;
 }
 
 .dash-line {
@@ -218,6 +232,10 @@ ul{
     color: white;
     border: none;
     /* width: 100px; */
+}
+
+#apply-btn:hover{
+    color: wheat;
 }
 
 .numbers-container{
@@ -367,8 +385,14 @@ width: 125px;
 /* Scalar-Recipe-style-css */
 
 .scalar-recipe-container{
-    margin-top: 150px;
+    margin-top: 100px;
 }
+
+.scalar-recipe-container h2{
+    margin-bottom: 50px;
+}
+
+
 .scaler-reciper-card{
     position: relative;
     text-align: center;
@@ -381,14 +405,18 @@ width: 125px;
     box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16)
 }
 
+.scaler-reciper-card h3{
+    color: #121212;
+}
+
 .card-1{
-    background-color: #dba3ff;
+    background-color: #4a92ff;
     /* position: relative; */
 }
 
-.card-1 h3{
+/* .card-1 h3{
     color: #3988ff;
-}
+} */
 .scaler-reciper-card span{
     color: white;
 }
@@ -431,17 +459,17 @@ background: #e8f2ff;
 .card-2{
     background: #f6d9ff;
 }
-.card-2 h3{
+/* .card-2 h3{
     color: #a500d9;
-}
+} */
 
 .card-3{
     background: #ffcbb6;
 }
 
-.card-3 h3{
+/* .card-3 h3{
     color :#ff5f1f;
-}
+} */
 
 
 /* certificate-container-style-css */
@@ -493,6 +521,9 @@ background: #e8f2ff;
 .certificate-right-box{
    
     display: flex;
+    left: 0;
+    position: relative;
+    transition: left .3s;
    
 }
 
@@ -501,10 +532,20 @@ background: #e8f2ff;
 }
 
 .certificate-right-box-container{
+    position: relative;
     width: 50%;
     overflow: hidden;
     height: fit-content;
     border: 10px solid #992300;
+}
+
+.certificate-right-box-container i{
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    color: grey;
+    cursor: pointer;
 }
 
 
@@ -571,6 +612,10 @@ color: white;
 cursor: pointer;
 }
 
+.right-left-arrow i:hover{
+    color: wheat;
+}
+
 .learner-img-box img{
     width: 100%;
     border-radius: 50%;
@@ -635,19 +680,19 @@ cursor: pointer;
 
 
 .card-2{
-    background-color: #dea9ff;
+    background-color:#bc50ff;
 }
 
 .card-1{
-    background-color: #adcdff;
+    background-color:#4a92ff;
 }
 
 .card-3{
-    background-color: #ffab89;
+    background-color: #ff8a5a;
 }
 
 .card-4{
-    background-color: #df9454;
+    background-color: #ff9b45;
 }
 
 
@@ -668,13 +713,22 @@ cursor: pointer;
         display: flex;
         position: fixed;
         justify-content: center;
-        top: 15%;
+        top: 0;
         z-index: 9999;
         left: 25%;
         display: none;
         width: 50vw;
+        transition: all .8s;
+        -moz-transition: all .8s;
+        -webkit-transition:all .8s;
+        -o-transition: all .8s;
+    }
+    
 
-}
+
+#videoContainer.show {
+    top: 50% !important; /* new position for the transition */
+  }
 
 #videoContainer iframe{
     width: 100%;
@@ -708,6 +762,12 @@ cursor: pointer;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    position: absolute;
+    bottom: 0;
+}
+
+.watch-video-section:hover{
+    color: wheat;
 }
 
 .alumni-group-img-section{
@@ -736,7 +796,7 @@ position: absolute;
 }
 
 .alumni-img-section{
-  width: 300px;
+  width: 350px;
 }
 
 .alumni-img-section img{
@@ -750,6 +810,11 @@ position: absolute;
 
 .alumni-review-section{
     width:400px;
+    position: relative;
+}
+
+.alumni-review-section p{
+    line-height: 25px;
 }
 
 .alumni-image-detail-section{
