@@ -20,6 +20,12 @@ function addEventListenerToCourse(index) {
     var courseElement = document.getElementsByClassName('course-name')[index];
     console.log('add active', index, addactiveElement);
     addactiveElement.setAttribute("id", "active");
+    const container = addactiveElement.parentElement;
+    container.scrollTop = addactiveElement.offsetTop;
+
+
+
+    // parentContainer.scrollTo({ behavior: 'smooth', block: 'start' });
     courseElement.setAttribute("id", "check");
   });
 }
@@ -182,6 +188,8 @@ window.onload = function() {
 function expandText(index) {
   var targetElement = document.getElementById('review-text-' + index);
   let showHideText = document.getElementsByClassName('show-hide')[index];
+  const reviewCard = document.getElementsByClassName('review-card')[index];
+
   
   const maxLength = 300;
   
@@ -195,12 +203,29 @@ function expandText(index) {
   
   var computedStyle = window.getComputedStyle(targetElement);
   var currentHeight = computedStyle.getPropertyValue('height');
+
+  // var computedReviewStyle = window.getComputedStyle(reviewCard);
+  // var currentReviewHeight = computedStyle.getPropertyValue('height');
   
   if (currentHeight === '67px') {
-    console.log('target element', currentHeight);
-    targetElement.style.height = 'auto';
+
+    console.log('target element', targetElement.scrollHeight);
+    targetElement.style.height = `${targetElement.scrollHeight}px`;
+    
+    // targetElement.style.height = "auto";
+    // reviewCard.style.height = 'auto'
   } else {
     targetElement.style.height = '67px';
+    // reviewCard.style.height = '150px'
+  }
+
+  if (reviewCard.classList.contains('expanded')) {
+    reviewCard.style.height = '200px';
+    reviewCard.classList.remove('expanded');
+  } else {
+   
+    reviewCard.style.height = `${reviewCard.scrollHeight}px`;
+    reviewCard.classList.add('expanded');
   }
   
 

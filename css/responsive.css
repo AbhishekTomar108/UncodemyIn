@@ -131,7 +131,7 @@
 
     .partner-company-img-container img{
 
-        /* height: 30px; */
+        height: 20px;
     }
 
     .certificate-right-box-container{
@@ -176,6 +176,7 @@
 
     .placement-company span{
         font-size: 10px;
+       
     }
 
     .placement-company img{
@@ -184,6 +185,7 @@
     .placement-company
     {
         height: 10px;
+        column-gap: 10px;
     }
 
     .review-card p{
@@ -278,5 +280,13 @@
 
     .scaler-reciper-card{
         width: auto;
+    }
+
+    #hcl-img{
+        height: 30px !important;
+    }
+
+    .placement-company{
+        column-gap: 5px;
     }
 }

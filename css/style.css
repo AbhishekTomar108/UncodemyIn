@@ -163,7 +163,8 @@ h2{
     display: flex;
     column-gap: 25px;
     flex-wrap: wrap;
-    row-gap: 10px;
+    row-gap: 25px;
+    padding: 7px;
     justify-content: center;
 }
 
@@ -265,6 +266,11 @@ width: 125px;
     right: -8px;
 }
 
+
+#hcl-img{
+    height: 50px;
+}
+
 /* Explore-course-style-css */
 
 .explore-courses-container{
@@ -278,6 +284,7 @@ width: 125px;
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 20px;
+    row-gap: 20px;
     display: none;
 }
 
@@ -294,6 +301,10 @@ width: 125px;
     width: 100%;
 }
 
+.course-card-section span{
+    font-size: 12px;
+}
+
 .logo{
     display: flex;
     height: 25px;
@@ -302,9 +313,18 @@ width: 125px;
 }
 
 .logo img{
-     height: 100%;
+     
      width: auto;
 }
+
+.future-skill-img{
+    height: 90%;
+}
+
+.nasscom-img{
+    height: 80% !important;
+}
+
 
 .logo .line{
     height: 100%;
@@ -375,6 +395,14 @@ width: 125px;
 
 .course-card-container{
     position: relative;
+    height: 473px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;
+}
+
+.course-card-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 #active{
@@ -487,7 +515,7 @@ background: #e8f2ff;
     margin: 50px auto;
     display: flex;
     width: 90%;
-    padding: 30px 0;
+    padding: 20px 0 0 0 ;
 }
 
 .with-partner{
@@ -495,21 +523,30 @@ background: #e8f2ff;
     align-items: center;
     background: white;
     width: 200px;
-    padding: 10px;
-    justify-content: space-between
+    padding: 5px 0;
+    justify-content: space-around;
 }
 
 .with-partner img{
-    height: 30px;
+    height: 28px;
 }
 
 .certificate-detail ul li{
-    height: 40px;
+    height: 25px;
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     align-items: center;
     column-gap: 30px;
 }
+
+.certificate-left-box h2{
+    line-height: 38px;
+}
+
+.certificate-detail{
+    margin-top: 30px;
+}
+
 
 .vertical-line{
 
@@ -589,6 +626,7 @@ background: #e8f2ff;
 }
 
 .review-card{
+    height: 200px;
     padding: 30px 10px;
     width: 90%;
     display: flex;
@@ -598,10 +636,23 @@ background: #e8f2ff;
     border: 1px solid #ededed;
     box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16);
     align-items: center;
+    transition-property: height;
+    transition-duration: 0.5s;
+    /* -webkit-transition: all 0.25s; */
+
+    /* transition: height 0.6s; */
 }
+
+/* .review-card.expanded {
+    height: 275px;
+    transition-property: all;
+    transition-duration: 0.7s;
+  } */
 
 .learner-img-box{
 padding: 0 20px;
+min-width: 100px;
+max-width: 100px;
 }
 
 .right-left-arrow i{
@@ -657,6 +708,11 @@ cursor: pointer;
     transition: height .3s;
     /* max-height: 4.5em; */
 }
+
+/* .learner-review-detail{
+    transition: all .3s;
+    overflow: hidden;
+} */
 
 .learner-review-detail .show-hide{
     color: black;
