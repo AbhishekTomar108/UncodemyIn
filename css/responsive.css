@@ -61,6 +61,10 @@
         row-gap: 30px;
     }
 
+    .awards-recognition-container{
+        margin-top: 70px;
+    }
+
     .awards-thumb{
         width: auto;
     }

@@ -33,66 +33,75 @@ function addEventListenerToCourse(index) {
 const certificateRight = ()=>{
 
 
+
+     
   const totalCertificateLenght  = document.getElementsByClassName('certicate-image').length;
-  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
-  // console.log('move image ',MovedImage)
+ 
 
   const certificate = document.querySelector('.certificate-right-box');
-  const computedStyle = window.getComputedStyle(certificate);
-  const leftValue = computedStyle.getPropertyValue('left');
+ 
 
-  const certificateWidth  = certificate.clientWidth;
-  console.log('width of section =',certificate.clientWidth)
+  const computedCertificateStyle = window.getComputedStyle(certificate);
+  const certificateWidth = parseFloat(computedCertificateStyle.getPropertyValue('width'));
+  const certificateLeftValue = computedCertificateStyle.getPropertyValue('left');
 
-  const totalWidthToMove = (totalCertificateLenght-1)*certificateWidth;
-  const currentMove = Math.abs(parseInt(leftValue));
-  console.log('total width ',totalWidthToMove)
-  console.log(currentMove)
 
-  if((currentMove)>=totalWidthToMove){
-    console.log('if =',currentMove,totalWidthToMove)
+
+
+  const totalCertificateWidthToMove = (totalCertificateLenght-1)*certificateWidth;
+  const currentCertificateMove = Math.abs(parseFloat(certificateLeftValue));
+  console.log('left value = ',certificateLeftValue,parseInt(certificateLeftValue),certificateWidth)
+  // const currentCertificateMove = parseInt(certificateLeftValue);
+  console.log('total width ',totalCertificateWidthToMove)
+  console.log(currentCertificateMove)
+
+  if((currentCertificateMove)>=totalCertificateWidthToMove-1){
+    console.log('if =',currentCertificateMove,totalCertificateWidthToMove)
     certificate.style.left = `${(0)}px`
   }
 
   else{
-    console.log('else =',currentMove,totalWidthToMove)
-    certificate.style.left = `${(-currentMove-certificateWidth)}px`
-  } 
+    console.log('else =',currentCertificateMove,totalCertificateWidthToMove)
+    certificate.style.left = `${(-currentCertificateMove-certificateWidth)}px`
+  }
+
+  
 }
 
 const certificateLeft = ()=>{
 
-
+     
   const totalCertificateLenght  = document.getElementsByClassName('certicate-image').length;
-  // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
-  // console.log('move image ',MovedImage)
+ 
 
   const certificate = document.querySelector('.certificate-right-box');
-  const computedStyle = window.getComputedStyle(certificate);
-  const leftValue = computedStyle.getPropertyValue('left');
+ 
 
-  const certificateWidth  = certificate.clientWidth;
-  console.log('width of section =',certificate.clientWidth)
+  const computedCertificateStyle = window.getComputedStyle(certificate);
+  const certificateWidth = parseFloat(computedCertificateStyle.getPropertyValue('width'));
+  const certificateLeftValue = computedCertificateStyle.getPropertyValue('left');
 
-  const totalWidthToMove = (totalCertificateLenght-1)*certificateWidth;
-  const currentMove = Math.abs(parseInt(leftValue));
-  console.log('total width ',totalWidthToMove)
-  console.log(currentMove)
+  const totalCertificateWidthToMove = (totalCertificateLenght-1)*certificateWidth;
+  const currentCertificateMove = Math.abs(parseFloat(certificateLeftValue));
+ 
 
-  if((currentMove)<=0){
-    console.log('if =',currentMove,totalWidthToMove)
-    certificate.style.left = `${(-totalWidthToMove)}px`
+  
+  if((currentCertificateMove)<=1){
+ 
+    certificate.style.left = `${(-totalCertificateWidthToMove)}px`
   }
 
-  else{
-    console.log('else =',currentMove,totalWidthToMove)
-    certificate.style.left = `${(-currentMove+certificateWidth)}px`
-  }  
+   else{
+    
+    certificate.style.left = `${(-currentCertificateMove+certificateWidth)}px`
+  } 
+  
 }
 
 
 const movealumniright  =()=>{
-  console.log('moving running')
+  
+  // clearInterval(alumniInterval)
 
   const totalAlumniLenght  = document.getElementsByClassName('alumni-image-thumb').length;
   // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
@@ -103,26 +112,27 @@ const movealumniright  =()=>{
   const leftValue = computedStyle.getPropertyValue('left');
 
   const alumniWidth  = alumni.clientWidth;
-  console.log('width of section =',alumni.clientWidth)
+
 
   const totalWidthToMove = (totalAlumniLenght-1)*alumniWidth;
   const currentMove = Math.abs(parseInt(leftValue));
-  console.log('total width ',totalWidthToMove)
-  console.log(currentMove)
+
 
   if((currentMove)>=totalWidthToMove){
-    console.log('if =',currentMove,totalWidthToMove)
+    
     alumni.style.left = `${(0)}px`
   }
 
   else{
-    console.log('else =',currentMove,totalWidthToMove)
+    
     alumni.style.left = `${(-currentMove-alumniWidth)}px`
   } 
    
 }
 const movealumnileft  =()=>{
-  console.log('moving running')
+
+
+  // clearInterval(alumniInterval)
 
   const totalAlumniLenght  = document.getElementsByClassName('alumni-image-thumb').length;
   // const MovedImage = document.querySelector('.alumni-image-detail-section').style.left;
@@ -133,20 +143,19 @@ const movealumnileft  =()=>{
   const leftValue = computedStyle.getPropertyValue('left');
 
   const alumniWidth  = alumni.clientWidth;
-  console.log('width of section =',alumni.clientWidth)
+  
 
   const totalWidthToMove = (totalAlumniLenght-1)*alumniWidth;
   const currentMove = Math.abs(parseInt(leftValue));
-  console.log('total width ',totalWidthToMove)
-  console.log(currentMove)
+
 
   if((currentMove)<=0){
-    console.log('if =',currentMove,totalWidthToMove)
+ 
     alumni.style.left = `${(-totalWidthToMove)}px`
   }
 
   else{
-    console.log('else =',currentMove,totalWidthToMove)
+ 
     alumni.style.left = `${(-currentMove+alumniWidth)}px`
   } 
    
@@ -158,30 +167,77 @@ const movealumnileft  =()=>{
 const selector  = "review-text"
 const maxLength  = 50;
 
-// function truncateText(selector,maxLength) {
 
-//   console.log('truncate is running')
 
-//   var element = document.querySelectorAll(selector)
-//   console.log('length =',element.length)
-//   for(let i=0; i<element.length; i++)
-//   {
-//     truncated = element[i].innerText;
-//     console.log('truncate text =',truncated.length)
-
-//     if (truncated.length > maxLength) {
-//         truncated = truncated.substr(0,maxLength) + '...';
-//     }
-  
-//     element[i].innerText =  truncated
-//   }
-   
-//   return truncated;
-// }
+let alumniInterval = null
 
 window.onload = function() {
-  truncateText(".review-text", 300);
-  // console.log('Truncated text:', result);
+  
+
+  // ------------- alumni auto crousel ------------------
+  alumniInterval = setInterval(()=>{
+
+    // ------------- alumni auto crousel ---------------
+
+    const totalAlumniLenght  = document.getElementsByClassName('alumni-image-thumb').length;
+
+  
+    const alumni = document.querySelector('.alumni-image-detail-section');
+    const computedStyle = window.getComputedStyle(alumni);
+    const leftValue = computedStyle.getPropertyValue('left');
+  
+    const alumniWidth  = alumni.clientWidth;
+
+  
+    const totalWidthToMove = (totalAlumniLenght-1)*alumniWidth;
+    const currentMove = Math.abs(parseInt(leftValue));
+  
+  
+    if((currentMove)>=totalWidthToMove){
+     
+      alumni.style.left = `${(0)}px`
+    }
+  
+    else{
+    
+      alumni.style.left = `${(-currentMove-alumniWidth)}px`
+    }
+
+
+    // --------- certificate auto crousel --------------
+      
+  const totalCertificateLenght  = document.getElementsByClassName('certicate-image').length;
+ 
+
+  const certificate = document.querySelector('.certificate-right-box');
+ 
+
+  const computedCertificateStyle = window.getComputedStyle(certificate);
+  const certificateWidth = parseFloat(computedCertificateStyle.getPropertyValue('width'));
+  const certificateLeftValue = computedCertificateStyle.getPropertyValue('left');
+
+
+
+
+  const totalCertificateWidthToMove = (totalCertificateLenght-1)*certificateWidth;
+  const currentCertificateMove = Math.abs(parseFloat(certificateLeftValue));
+
+  // const currentCertificateMove = parseInt(certificateLeftValue);
+  
+
+  if((currentCertificateMove)>=totalCertificateWidthToMove-1){
+    certificate.style.left = `${(0)}px`
+  }
+
+  else{
+    certificate.style.left = `${(-currentCertificateMove-certificateWidth)}px`
+  }
+
+  },5000)
+ 
+
+
+
 };
 
 

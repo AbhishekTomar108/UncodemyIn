@@ -362,15 +362,18 @@ width: 125px;
     display: flex;
     position: relative;
     width: 80px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
+    height: 30px;
 }
 .st-image li img{
     border-radius: 50%;
     max-width: 25px;
+    height: 100%;
 }
 
 .st-image li{
     position: absolute;
+    height: 100%;
     
 }
 
@@ -972,7 +975,7 @@ position: absolute;
 }
 
 .career-session-container h3{
-    margin: 10px;
+    margin: 10px 0;
 }
 
 .detail h3{
