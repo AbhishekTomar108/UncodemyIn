@@ -185,6 +185,8 @@ window.onload = function() {
 };
 
 
+
+
 function expandText(index) {
   var targetElement = document.getElementById('review-text-' + index);
   let showHideText = document.getElementsByClassName('show-hide')[index];
@@ -224,9 +226,12 @@ function expandText(index) {
     reviewCard.classList.remove('expanded');
   } else {
    
-    reviewCard.style.height = `${reviewCard.scrollHeight}px`;
+    // reviewCard.style.height = `${reviewCard.scrollHeight}px`;
+    reviewCard.style.height = 'auto';
+
     reviewCard.classList.add('expanded');
   }
+  
   
 
 

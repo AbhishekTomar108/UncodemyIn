@@ -44,7 +44,7 @@ ul{
 }
 
 h2{
-
+   font-size: 30px;
 }
 
 /* Banner-style-css */
@@ -97,7 +97,7 @@ h2{
 .dash-line {
     background: #000;
     height: 2px;
-    margin: 0 30px 0 45px;
+    margin: 0 30px 0 30px;
     width: 5px;
 }
 
@@ -159,6 +159,10 @@ h2{
     margin-top: 50px;
 }
 
+.partner h3{
+    font-size: 25px;
+}
+
 .partner-company-img-container{
     display: flex;
     column-gap: 25px;
@@ -200,6 +204,7 @@ h2{
 
 .awards-thumb span{
     text-align: center;
+    height: 60px;
 }
 
 /* Career-Session-style-css */
@@ -297,6 +302,10 @@ width: 125px;
     box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16)
 }
 
+.course-card-section p{
+    min-height: 40px;
+}
+
 .course-card-section img{
     width: 100%;
 }
@@ -336,6 +345,17 @@ width: 125px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.view{
+    width: fit-content;
+    border-bottom: 1px solid white;
+    transition: border-color .5s;
+}
+
+.view:hover{
+    border-color: #ff5421;
+    /* border-bottom: 1px solid #ff5421; */
 }
 
 .st-image{
@@ -466,6 +486,7 @@ background: #e8f2ff;
     } */
 
 .inner-card{
+    height: 150px;
     bottom: -17%;
     padding: 10px;
     position: absolute;
@@ -474,6 +495,10 @@ background: #e8f2ff;
     background-color: #fff;
     border: 1px solid #ededed;
     box-shadow: 0 0 6px 0.2rem rgb(178 178 178 / 16)
+}
+
+.inner-card img{
+    height: 100%;
 }
 
 .scalar-recipe-card-section{
@@ -583,6 +608,10 @@ background: #e8f2ff;
     z-index: 5;
     color: grey;
     cursor: pointer;
+}
+
+.certificate-right-box-container i:hover{
+    color: black;
 }
 
 
