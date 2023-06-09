@@ -54,6 +54,76 @@ h2{
    
 }
 
+.learner-number{
+    position: relative;
+    /* animation: move 1.5s forwards; */
+   
+}
+
+/* .digit{
+    color: #ff5421;
+    position: relative;
+    animation: move 1.5s forwards;
+}
+
+@keyframes move {
+    from {
+      bottom: 200px;
+    }
+    to {
+      bottom: 0;
+    }
+  } */
+
+
+  @keyframes fallingEffect {
+    0% {
+      transform: translateY(-70px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .digit {
+    display: inline-block;
+    color: #ff5124;
+    opacity: 0;
+  }
+  
+
+  .falling-effect {
+    animation: fallingEffect 1s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  
+
+.learner-number::before{
+    
+    position: absolute;
+    content: "+";
+    color: #ff5124;
+    top: -10px;
+    right: -8px;
+}
+
+.learner-people-group-img-container{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.banner-ul{
+    height: 40px !important;
+}
+.banner-ul li img{
+   max-width: 40px !important;
+}
+
 .banner-section{
     display: flex;
 }
@@ -157,10 +227,14 @@ h2{
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
+    background-color: #f3f3f3;
+    padding: 25px 0;
 }
 
 .partner h3{
     font-size: 25px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ff5421;
 }
 
 .partner-company-img-container{
@@ -200,6 +274,7 @@ h2{
     align-items: center;
     row-gap: 15px;
     width: 200px;
+    opacity: 0;
 }
 
 .awards-thumb span{
@@ -211,10 +286,22 @@ h2{
 
 .career-section-thumb{
         display: flex;
+        position: relative;
 }
 
-.career-session-container{
-    margin-top: 100px;
+.career-section-thumb::before{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    background: #ff5124;
+    top: -17px;
+}
+
+
+
+.career-main-container{
+
 }
 
 /* .career-session-left-box{
@@ -276,6 +363,120 @@ width: 125px;
     height: 50px;
 }
 
+
+
+/* ------ Form section ----------- */
+
+.form-image-main-container{
+    position: fixed;
+    z-index: 9999;
+    margin-bottom: 50px;
+    background-image: url('../image/form-background.jpg');
+    padding: 50px;
+    display: none;
+    justify-content: center;
+    width: 75vw;
+    top: 0;
+    transition: all .8s;
+    -moz-transition: all .8s;
+    -webkit-transition:all .8s;
+    -o-transition: all .8s;
+}
+
+.form-image-main-container i{
+
+    color: white !important;
+    right: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    font-size: 40px;
+}
+
+.container-header{
+    font-size: 30px;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 84, 33, 0.5);
+}
+
+
+.form-image-header{
+    width: fit-content;
+}
+
+.form-image-container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* option{
+    background-color: #ff5421;
+} */
+
+/* option:hover{
+    background-color: #ff5421;
+} */
+
+select option:hover {
+    background-color: #f2f2f2;
+    color: #000000;
+  }
+
+.form-section form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+form .row{
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 5px;
+}
+
+
+form .row:focus{
+    outline: none;
+}
+
+.form-section{
+    min-width: 400px;
+    padding: 30px;
+}
+
+.container-left-box{
+    background-color: white;
+    
+}
+.container-right-box{
+    background-color: rgba(0, 0, 0, 0.5);
+  
+}
+
+/* .container-right-box::after{
+    position: absolute;
+    content: "";
+    background:transparent;
+} */
+
+form select{
+    padding: 5px 0 !important;
+}
+
+.submit-btn{
+    text-align: center;
+    background: #ff5421;
+    color: white;
+    padding: 15px 0;
+    border-radius: 2px;
+}
+
 /* Explore-course-style-css */
 
 .explore-courses-container{
@@ -303,7 +504,10 @@ width: 125px;
 }
 
 .course-card-section p{
-    min-height: 40px;
+    min-height: 35px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 15px;
 }
 
 .course-card-section img{
@@ -344,7 +548,11 @@ width: 125px;
 .time-month-student{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.course-card-section ul{
+    margin-top: 5px !important;
 }
 
 .view{
@@ -445,6 +653,7 @@ width: 125px;
 
 
 .scaler-reciper-card{
+    opacity: 0;
     position: relative;
     text-align: center;
     min-height: 300px;
@@ -644,6 +853,11 @@ background: #e8f2ff;
 
 /* review-container-style-css */
 
+.best-companies-container{
+    background: #f7fafe;
+    padding: 35px 0;
+}
+
 .review-container{
     width: 90vw;
     margin-top: 100px;
@@ -658,6 +872,7 @@ background: #e8f2ff;
 }
 
 .review-card{
+    opacity: 0;
     height: 200px;
     padding: 30px 10px;
     width: 90%;
@@ -788,7 +1003,7 @@ cursor: pointer;
 
 
 .alumni-container{
-    margin-top: 150px;
+    margin-top: 100px;
     /* width: 80vw; */
 }
 
@@ -801,11 +1016,13 @@ cursor: pointer;
         display: flex;
         position: fixed;
         justify-content: center;
-        top: 0;
+        /* top: 20%; */
+        top: 20%;
         z-index: 9999;
         left: 25%;
         display: none;
         width: 50vw;
+        /* transform: translate(0, -50px); */
         transition: all .8s;
         -moz-transition: all .8s;
         -webkit-transition:all .8s;
@@ -959,12 +1176,20 @@ position: absolute;
     height: 100%;
 }
 
+
+.career-main-container{
+    background-color:#f7fafe ;
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
 .career-session-container{
+    padding: 40px 0;
     display: flex;
     column-gap: 100px;
     width: 80vw;
-    margin-bottom: 100px;
-    margin-top: 150px;
+    position: relative;
+    margin-top: 100px;
 }
 
 .detail{

@@ -172,6 +172,61 @@ const maxLength  = 50;
 let alumniInterval = null
 
 window.onload = function() {
+
+  var digits = document.querySelectorAll('.learner-number .digit');
+digits.forEach(function(digit, index) {
+  digit.style.animation = "fallingEffect 1s ease-in-out";
+  digit.style.animationFillMode = "forwards";
+  digit.style.animationDelay = (index + 1) * 0.1 + "s";
+});
+
+//   var awards = document.querySelectorAll('.awards-thumb');
+//   awards.forEach(function(award, index) {
+//     award.style.animation = "fallingEffect 1s ease-in-out";
+//     award.style.animationFillMode = "forwards";
+//     award.style.animationDelay = (index + 1) * 0.1 + "s";
+// });
+
+
+
+  // Function to handle intersection changes
+  function handleIntersection(entries, observer) {
+    entries.forEach(function(entry, index) {
+      if (entry.isIntersecting) {
+        setTimeout(function() {
+          entry.target.classList.add('falling-effect');
+        }, (index + 1) * 200); // Adjust the delay duration as needed
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  // Create an intersection observer instance
+  var observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+
+  // Get all the awards thumb elements
+  var awards = document.querySelectorAll('.awards-thumb');
+  let scalarCards = document.querySelectorAll('.scaler-reciper-card');
+  let reviewCards = document.querySelectorAll('.review-card');
+
+  // Observe each awards thumb element
+  awards.forEach(function(award) {
+    observer.observe(award);
+  });
+
+  // Observe each scalarCards thumb element
+  scalarCards.forEach(function(scalarCard) {
+    observer.observe(scalarCard);
+  });
+
+   // Observe each reviewCards thumb element
+  reviewCards.forEach(function(reviewCard) {
+    observer.observe(reviewCard);
+  });
+
+
+
+
   
 
   // ------------- alumni auto crousel ------------------
@@ -306,13 +361,37 @@ function expandText(index) {
 }
 
 
-function showVideo(){
-  document.getElementById('videoContainer').style.display="block"
-  document.getElementById('videoContainer').style.top="20%"
-
+function showForm(){
+  console.log('show form running')
+  document.querySelector('.form-image-main-container').style.display="flex"
+  document.querySelector('.form-image-main-container').style.top="3%"
   document.body.style.overflow='hidden'
-  var myFrame = videoContainer.querySelector("iframe");
+  document.getElementById('overlay').style.display="block"
+}
+
+
+function hideForm(){
+  document.querySelector('.form-image-main-container').style.display="none"
+  document.body.style.overflow='auto'
+  document.getElementById('overlay').style.display="none"
+}
+
+function showVideo(){
+
+  
+
+  var myFrame = document.querySelector("iframe");
   myFrame.src = "https://www.youtube.com/embed/N6KsC9Y00M8";
+
+  let videoContainer = document.getElementById('videoContainer')
+  document.getElementById('videoContainer').style.display="block"
+ 
+  // document.getElementById('videoContainer').style.top="20%"
+
+  videoContainer.style.animation = "fallingEffect .5s ease-in-out";
+  videoContainer.style.animationFillMode = "forwards";
+  document.body.style.overflow='hidden'
+  
   document.getElementById('overlay').style.display="block"
   // videoContainer.classList.add('show');
 }
@@ -320,10 +399,11 @@ function showVideo(){
 function hideVideo(){
   console.log('hiding')
   document.getElementById('videoContainer').style.display="none"
-  document.getElementById('videoContainer').style.top="0"
+  
+  // document.getElementById('videoContainer').style.top="0"
   document.body.style.overflow='auto'
   document.getElementById('overlay').style.display="none"
-  var myFrame = videoContainer.querySelector("iframe");
+  var myFrame = document.querySelector("iframe");
 
 
   myFrame.src = ""; 
