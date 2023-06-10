@@ -14,7 +14,80 @@
 
     <!-- Dummy-Nav-Section -->
 
-    <div class="nav"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="image/uncodemy-logo.jpg">
+            </div>
+    
+            <div class="navigation-container">
+                <div class="navigation-section">
+                    <ul>
+                        <li>Home</li>
+                        <li>About </li>
+                        <li id="course-text">Courses <i class="fa-solid fa-caret-down"></i>
+                        
+                        
+                            <div class="dropdown dropdown-course">
+                                <div class="course-detail-section">
+                                <div class="course-left-section">
+                                    <ul>
+                                        <li class="active">Data Science</li>
+                                        <li>Data Science</li>
+                                        <li>Data Science</li>
+                                        <li>Data Science</li>
+                                        <li>Data Science</li>
+                                        <li>Data Science</li>
+                                        <li>Data Science</li>
+                                    </ul>
+                                </div>
+                                <div class="course-right-section">
+                                    <div class="course-image-text">
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/python.jpg">
+                                        </div>
+                                        <span>Python</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/data-analytics-using-python.jpg">
+                                        </div>
+                                        <span>Data Analytics using Python</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/Data-Science-Machine-Learning-using-Python-1.jpg">
+                                        </div>
+                                        <span>Data Science & Machine Learning Using Python</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/Machine-Learning-using-Python.jpg">
+                                        </div>
+                                        <span>Machine Learning Using Python</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/AI-using-Python-1.jpg">
+                                        </div>
+                                        <span>AI using Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             </div>
+                        </li>
+                        <li>Course Details</li>
+                        <li>Our Feature</li>
+                        <li>Instructor</li>
+                        <li>Contact</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Banner-Section -->
   
@@ -167,8 +240,72 @@
         
     <!-- form container -->
 
-    </div>
 </div>
+</div>
+
+<div class="form-parent">
+    <div class="form-main-container container">
+        <i class="fa-sharp fa-solid fa-square-xmark"  style="color: #ff5421;" onclick="hideForm()"></i>
+
+        <div class="form-header-container">
+            <div class="header-section">Application Form</div>
+            <div class="form-container">
+                <form>
+                    <div class="input-section name-section">
+                    <input>
+                    <label>Name</label>
+                </div>
+
+                <div class="input-section name-section">
+                    <input>
+                    <label>Email Address</label>
+                </div>
+
+                <div class="input-section name-section">
+                    <input>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-section name-section">
+                    <input>
+                    <label>Location</label>
+                </div>
+
+                <div class="training-course-select-section">
+                    <select>
+                        <option selected disabled>Select Your Course</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                    </select>
+
+                    <select>
+                        <option selected disabled>Select Your Mode</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                        
+                    </select>
+                </div>
+
+                <div class="subscibe">
+                    <input type="checkbox">
+                    <label>Subscribe to Our Uncodemy</label>
+                </div>
+
+                <div class="submit-btn">Submit</div>
+
+                </form>
+            </div>
+        </div>
+       </div>
+    </div>
+
+       <div id="overlay"></div>
+
+   
+
+
 
     <!--Form  container -->
 <!--   
@@ -1492,6 +1629,7 @@
 
        <!-- Alumni-container -->
 
+       <div class="alumni-main-container">
        <div class="alumni-container container above-line">
         
         <h3>ALUMNI NETWORK</h3>
@@ -1579,6 +1717,7 @@
             </div>
             </div>
         </div>
+    </div>
 
        </div>
 
@@ -1631,7 +1770,67 @@
        </div>
        </div>
 
+    
        
+
+       <!-- form Section -->
+<!-- 
+       <div class="form-main-container container">
+        <i class="fa-sharp fa-solid fa-square-xmark"  style="color: #ff5421;" onclick=""></i>
+
+        <div class="form-header-container">
+            <div class="header-section">Application Form</div>
+            <div class="form-container">
+                <form>
+                    <div class="input-section name-section">
+                    <input>
+                    <label>Name</label>
+                </div>
+
+                <div class="input-section name-section">
+                    <input>
+                    <label>Email Address</label>
+                </div>
+
+                <div class="input-section name-section">
+                    <input>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-section name-section">
+                    <input>
+                    <label>Location</label>
+                </div>
+
+                <div class="training-course-select-section">
+                    <select>
+                        <option selected disabled>Select Your Course</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                        <option>Data Science</option>
+                    </select>
+
+                    <select>
+                        <option selected disabled>Select Your Mode</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                        
+                    </select>
+                </div>
+
+                <div class="subscibe">
+                    <input type="checkbox">
+                    <label>Subscribe to Our Uncodemy</label>
+                </div>
+
+                <div class="submit-btn">Submit</div>
+
+                </form>
+            </div>
+        </div>
+       </div> -->
+
 
 
 

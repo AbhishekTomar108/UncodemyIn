@@ -36,22 +36,155 @@ ul{
     margin: 0;
 }
 
-
-.nav{
-    background-color: #ff5124;
-    height: 70px;
-    margin-bottom: 30px;
-}
-
 h2{
-   font-size: 30px;
+    font-size: 30px;
+ }
+
+
+ /* Navbar component style */
+
+
+ nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+ }
+
+ nav::after{
+    position: absolute;
+    content: "";
+    border: 1px solid grey;
+    width: 100%;
+    bottom: 0;
+ }
+
+.nav-container{
+    /* background-color: #ff5124; */
+    /* border-bottom: 1px solid grey; */
+    justify-content: space-between;
+    align-items: flex-end;
+    display: flex;
+    height: 75px;
+    padding: 20px 20px 0;
+    align-items: flex-end;
+    
 }
+
+.logo-container{
+    height: 3rem;
+    /* width: 100px; */
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img{
+  width: 100%;
+  height: 100%;
+}
+
+.active{
+    color: black !important;
+}
+
+.social-media-container ul {
+    display: flex;
+    column-gap: 20px;
+}
+
+.navigation-section ul{
+    display: flex;
+    column-gap: 35px;
+    height: 35px;
+}
+
+/* .navigation-section ul li{
+    position: relative;
+} */
+
+.dropdown{
+    position: absolute;
+    top:95px;
+    background-color: white;
+    width: 100%;
+    display: none;
+}
+
+
+#course-text:hover .dropdown{
+    display: block !important;
+    /* background-color: red; */
+} 
+
+.active-dropdown{
+    display: block;
+}
+
+.dropdown-course{
+    left: 0;
+    
+}
+
+.course-detail-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+}
+
+.course-left-section ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.course-left-section ul li{
+    font-size: 20px;
+    color: grey;
+}
+
+.course-img{
+    
+    height: 150px;
+    width: 150px;
+}
+
+.course{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course span{
+    width: 200px;
+    text-align: center;
+}
+
+.course-image-text{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    column-gap: 20px;
+}
+
+.course-right-section{
+    width: 60%;
+}
+
+
+.course-image-text .course img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
 
 /* Banner-style-css */
 
 .banner-container{
     width: 80vw;
-   
+    margin-top: 95px;
+
 }
 
 .learner-number{
@@ -227,7 +360,8 @@ h2{
     align-items: center;
     flex-direction: column;
     margin-top: 50px;
-    background-color: #f3f3f3;
+    background-color: #080808b5;
+    color: white;
     padding: 25px 0;
 }
 
@@ -275,6 +409,10 @@ h2{
     row-gap: 15px;
     width: 200px;
     opacity: 0;
+}
+
+.awards-thumb img{
+
 }
 
 .awards-thumb span{
@@ -367,33 +505,89 @@ width: 125px;
 
 /* ------ Form section ----------- */
 
-.form-image-main-container{
+
+.form-parent{
     position: fixed;
-    z-index: 9999;
-    margin-bottom: 50px;
-    background-image: url('../image/form-background.jpg');
-    padding: 50px;
+    /* left: 20%; */
     display: none;
+    width: 100%;
+    display: flex;
+    /* top: 10%; */
     justify-content: center;
-    width: 75vw;
-    top: 0;
-    transition: all .8s;
-    -moz-transition: all .8s;
-    -webkit-transition:all .8s;
-    -o-transition: all .8s;
+    /* top: 0; */
+    z-index: 9999;
 }
 
-.form-image-main-container i{
+.form-main-container{
+    position: relative;
+    width: 50vw;
+   
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
 
-    color: white !important;
-    right: 0;
-    cursor: pointer;
+.form-main-container i{
     position: absolute;
-    top: 0;
+    right: 10px;
+    top: 10px;
     font-size: 40px;
+    cursor: pointer;
 }
 
-.container-header{
+.form-main-container i:hover{
+   
+    color: black !important;
+}
+
+.form-header-container .header-section{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.subscibe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.form-container form input{
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ebebeb;
+}
+
+.form-container form .input-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    
+}
+
+.training-course-select-section{
+    display: flex;
+    justify-content: space-around;
+}
+
+form select {
+    padding: 10px !important;
+    width: 45%;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+    background-color: #ebebeb;
+}
+
+/* .container-header{
     font-size: 30px;
     color: white;
     height: 50px;
@@ -401,63 +595,27 @@ width: 125px;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 84, 33, 0.5);
-}
-
-
-.form-image-header{
-    width: fit-content;
-}
-
-.form-image-container{
-    display: flex;
-    justify-content: center;
-    
-}
-
-/* option{
-    background-color: #ff5421;
 } */
 
-/* option:hover{
-    background-color: #ff5421;
-} */
-
-select option:hover {
-    background-color: #f2f2f2;
-    color: #000000;
-  }
-
-.form-section form{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-}
-
-form .row{
-    font-size: 16px;
-    border: none;
-    border-bottom: 1px solid grey;
-    padding: 5px;
-}
 
 
-form .row:focus{
-    outline: none;
-}
 
-.form-section{
-    min-width: 400px;
-    padding: 30px;
-}
 
-.container-left-box{
+
+
+
+
+
+
+
+/* .container-left-box{
     background-color: white;
     
 }
 .container-right-box{
     background-color: rgba(0, 0, 0, 0.5);
   
-}
+} */
 
 /* .container-right-box::after{
     position: absolute;
@@ -465,9 +623,11 @@ form .row:focus{
     background:transparent;
 } */
 
-form select{
+/* form select{
     padding: 5px 0 !important;
-}
+    text-align: center;
+    font-weight: 700;
+} */
 
 .submit-btn{
     text-align: center;
@@ -854,8 +1014,9 @@ background: #e8f2ff;
 /* review-container-style-css */
 
 .best-companies-container{
-    background: #f7fafe;
+    background: #080808b5;
     padding: 35px 0;
+    color: white;
 }
 
 .review-container{
@@ -1002,9 +1163,25 @@ cursor: pointer;
 /* alumni-container-style-css */
 
 
-.alumni-container{
+
+.alumni-main-container{
     margin-top: 100px;
+    background-color: #0e0e0e;
+    color: white;
+    padding: 30px 0;
+}
+
+.alumni-container{
+    /* margin-top: 100px; */
     /* width: 80vw; */
+}
+
+.alumni-container h3{
+    margin: 10px 0;
+}
+
+.alumni-container h2{
+    margin: 10px 0;
 }
 
 .alumni-detail-container{
@@ -1120,6 +1297,7 @@ position: absolute;
 
 .alumni-review-section p{
     line-height: 25px;
+    color: white !important;
 }
 
 .alumni-image-detail-section{
@@ -1178,8 +1356,9 @@ position: absolute;
 
 
 .career-main-container{
-    background-color:#f7fafe ;
-    margin-top: 100px;
+    background-color:#0e0e0e ;
+    /* margin-top: 100px; */
+    color: white;
     margin-bottom: 70px;
 }
 
@@ -1187,7 +1366,7 @@ position: absolute;
     padding: 40px 0;
     display: flex;
     column-gap: 100px;
-    width: 80vw;
+    /* width: 80vw; */
     position: relative;
     margin-top: 100px;
 }

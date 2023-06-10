@@ -363,15 +363,20 @@ function expandText(index) {
 
 function showForm(){
   console.log('show form running')
-  document.querySelector('.form-image-main-container').style.display="flex"
-  document.querySelector('.form-image-main-container').style.top="3%"
+
+  const formConatiner = document.querySelector('.form-parent')
+  document.querySelector('.form-parent').style.display="block"
+  document.querySelector('.form-parent').style.top="3%"
+
+  formConatiner.style.animation = "fallingEffect .5s ease-in-out";
+  formConatiner.style.animationFillMode = "forwards";
   document.body.style.overflow='hidden'
   document.getElementById('overlay').style.display="block"
 }
 
 
 function hideForm(){
-  document.querySelector('.form-image-main-container').style.display="none"
+  document.querySelector('.form-parent').style.display="none"
   document.body.style.overflow='auto'
   document.getElementById('overlay').style.display="none"
 }
