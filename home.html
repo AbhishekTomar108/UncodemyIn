@@ -15,7 +15,34 @@
     <!-- Dummy-Nav-Section -->
 
     <nav>
+
+        <div class="nav-top-head">
+            
+            <span>Email:<a href="mailto:info@uncodemy.com">info@uncodemy.com</a></span>
+            <span> / </span>
+       
+       
+            <a href="tel:+917701928515" style="text-decoration: none; color: black;"> <span>India : +91 7701928515</span></a>
+            <span> / </span>
+          
+            
+            <a href="tel:+1-7184169028" style="text-decoration: none; color: black;">
+            <span>US : +1-718 416 9028</span>
+        </a>
+            <span> / </span>
+           
+            
+            <a href="tel:+442032870088" style="text-decoration: none; color: black;">
+            <span>UK : +44 20 3287 0088</span>
+            </a>
+           <span style="width: 3px; height: 17px; background-color: black;"></span>
+           
+            <span><b>HR Enquiry :</b> <span style="color: #ff5421;" ><a href="tel:+917701928515" style="text-decoration: none; color: #ff5421;">770 192 8515</a></span></span>
+           
+            </div>
         <div class="nav-container">
+
+            <i class="fa-solid fa-bars hamburger" onclick="showNavigation()"></i>
             <div class="logo-container">
                 <img src="image/uncodemy-logo.jpg">
             </div>
@@ -25,24 +52,21 @@
                     <ul>
                         <li>Home</li>
                         <li>About </li>
-                        <li id="course-text">Courses <i class="fa-solid fa-caret-down"></i>
+                        <li id="course-text"> <label onclick="showDropDown()" style="cursor: pointer;">Courses</label> <i class="fa-solid fa-caret-down" id="dropdown-arrow"></i>
                         
                         
                             <div class="dropdown dropdown-course">
                                 <div class="course-detail-section">
                                 <div class="course-left-section">
                                     <ul>
-                                        <li class="active">Data Science</li>
-                                        <li>Data Science</li>
-                                        <li>Data Science</li>
-                                        <li>Data Science</li>
-                                        <li>Data Science</li>
-                                        <li>Data Science</li>
-                                        <li>Data Science</li>
+                                        <li class = "course-name-dropdown" id="active-dropdown-course">Data Science</li>
+                                        <li class = "course-name-dropdown">Full Stack Development</li>
+                                        <li class = "course-name-dropdown">Software Testing</li>
+                                        <li class = "course-name-dropdown">Digital Marketing</li>
                                     </ul>
                                 </div>
                                 <div class="course-right-section">
-                                    <div class="course-image-text">
+                                    <div class="course-image-text" id="active-course">
                                         <div class="course">
                                             <div class="course-img">
                                             <img src="image/python.jpg">
@@ -73,6 +97,85 @@
                                         </div>
                                         <span>AI using Python</span>
                                         </div>
+                                    </div>
+                                    <div class="course-image-text">
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/full-stack-nodejs.jpg">
+                                        </div>
+                                        <span>Full Stack with NodeJs</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/Python-Full-Stack-1.jpg">
+                                        </div>
+                                        <span>Python Full Stack</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/java-full-stack-react.jpg">
+                                        </div>
+                                        <span>Java Full Stack using React</span>
+                                        </div>
+                                    
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/mean.jpg">
+                                        </div>
+                                        <span>MEAN</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/mern.jpg">
+                                        </div>
+                                        <span>MERN</span>
+                                        </div>
+                                    </div>
+                                    <div class="course-image-text">
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/software-testing.jpg">
+                                        </div>
+                                        <span>software Testing</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/manual-testing.jpg">
+                                        </div>
+                                        <span>Manual Testing</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/manaul-selenium.jpg">
+                                        </div>
+                                        <span>Manual + Selenium</span>
+                                        </div>
+                                    
+                                        
+                                      
+                                    </div>
+                                    <div class="course-image-text">
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/Digital-Marketing.jpg">
+                                        </div>
+                                        <span>Digital Marketing</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/Advance-Digital-Marketing.jpg">
+                                        </div>
+                                        <span>Advance Digital Marketing</span>
+                                        </div>
+                                        <div class="course">
+                                            <div class="course-img">
+                                            <img src="image/seo.jpg">
+                                        </div>
+                                        <span>Search Engine Optimisation (SEO)</span>
+                                        </div>
+                                    
+                                        
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -1710,7 +1813,7 @@
         
         <div id="videoContainer">
             
-        <iframe src="https://www.youtube.com/embed/N6KsC9Y00M8" width="500" height="300" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/2m3nmDoCdQo" width="500" height="300" frameborder="0" allowfullscreen></iframe>
         <i class="fa-sharp fa-solid fa-square-xmark"  style="color: #ff5421;" onclick="hideVideo()"></i>
     </div>
     <div id="overlay"></div>

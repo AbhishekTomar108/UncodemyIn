@@ -1,4 +1,39 @@
-console.log('running');
+// ------------------ header course javascript --------------
+
+
+let dropdownCourse  = document.getElementsByClassName("course-name-dropdown");
+
+for(let i = 0; i<dropdownCourse.length; i++){
+  addDropdownListener(i)
+}
+
+
+function addDropdownListener(index){
+  dropdownCourse[index].addEventListener("click" , function () {
+    // document.querySelector('.dropdown').style.display = 'block'
+
+    console.log('form corse name =',   document.querySelector('.dropdown').style.display)
+    let activeElement = document.getElementById("active-dropdown-course");
+    var activeCourses = document.getElementById("active-course");
+    if (activeElement) {
+      activeElement.removeAttribute("id");
+      activeCourses.removeAttribute("id");
+    }
+
+    
+    let dropdownCourseElement = document.getElementsByClassName('course-name-dropdown')[index];
+    dropdownCourseElement.setAttribute("id", "active-dropdown-course");
+
+    var addactiveCourses = document.getElementsByClassName('course-image-text')[index];
+    addactiveCourses.setAttribute("id", "active-course");
+    console.log('index ',index,dropdownCourseElement )
+  })
+}
+
+
+
+
+// --------------- change course javascript --------------
 
 var courseNames = document.getElementsByClassName("course-name");
 
@@ -29,6 +64,9 @@ function addEventListenerToCourse(index) {
     courseElement.setAttribute("id", "check");
   });
 }
+
+
+
 
 const certificateRight = ()=>{
 
@@ -227,6 +265,8 @@ digits.forEach(function(digit, index) {
 
 
 
+
+
   
 
   // ------------- alumni auto crousel ------------------
@@ -381,12 +421,76 @@ function hideForm(){
   document.getElementById('overlay').style.display="none"
 }
 
+
+// --------- Dropdown show function ------------
+
+
+// document.getElementById('course-text').addEventListener('click',()=>{
+
+//   console.log('show drop down')
+//   let dropDown = document.querySelector('.dropdown');
+//   var computedStyle = window.getComputedStyle(dropDown);
+//   if(computedStyle.display==="none"){
+//     dropDown.style.display="flex"
+//     document.getElementById('dropdown-arrow').style.color = "#ff5421"
+//     document.getElementById('course-text').style.color = "#ff5421"
+//   }
+
+//   else{
+//     dropDown.style.display="none"
+//     document.getElementById('dropdown-arrow').style.color = "black"
+//     document.getElementById('course-text').style.color = "black"
+//   }
+// })
+
+
+function showDropDown(){
+
+  console.log('show drop down')
+  let dropDown = document.querySelector('.dropdown');
+  var computedStyle = window.getComputedStyle(dropDown);
+  if(computedStyle.display==="none"){
+    if(window.innerWidth <= 780)
+    {
+    dropDown.style.display="flex"
+    }
+    else{
+      dropDown.style.display="block"
+    }
+    document.getElementById('dropdown-arrow').style.color = "#ff5421"
+    document.getElementById('course-text').style.color = "#ff5421"
+  }
+
+  else{
+    dropDown.style.display="none"
+    document.getElementById('dropdown-arrow').style.color = "black"
+    document.getElementById('course-text').style.color = "black"
+  }
+}
+
+
+// ----------navigation show function------------
+
+function showNavigation(){
+  let navigation = document.querySelector('.navigation-container');
+  var computedStyle = window.getComputedStyle(navigation);
+  if(computedStyle.display==="none"){
+    navigation.style.display="block"
+    
+  }
+
+  else{
+
+    navigation.style.display="none"
+  }
+}
+
 function showVideo(){
 
   
 
   var myFrame = document.querySelector("iframe");
-  myFrame.src = "https://www.youtube.com/embed/N6KsC9Y00M8";
+  myFrame.src = "https://www.youtube.com/embed/2m3nmDoCdQo";
 
   let videoContainer = document.getElementById('videoContainer')
   document.getElementById('videoContainer').style.display="block"

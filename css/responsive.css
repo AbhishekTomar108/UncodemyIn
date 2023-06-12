@@ -23,6 +23,10 @@
         width: auto ;
     } 
 
+    .banner-container{
+        margin-top: 60px;
+    }
+
     .alumni-container{
         width: auto;
         padding: 0 10px;
@@ -251,6 +255,27 @@
         font-size: 12px;
         padding: 0 30px;
     }
+
+    .navigation-section ul{
+        column-gap: 15px;
+    }
+
+      .logo-container{
+        height: 2.1rem;
+      }
+
+      .nav-container{
+        padding: 5px 5px 0;
+        justify-content: space-between;
+      }
+
+      #course-text:hover .dropdown{
+        display: none;
+    }
+
+    .nav-top-head{
+        display: none;
+    }
     
 
       /* ------- alumni-container ------*/
@@ -411,4 +436,81 @@
     .awards-thumb img {
         height: 40px;
     }
+}
+
+
+@media screen and (max-width:780px){
+    
+    .navigation-section ul
+    {
+        flex-direction: column;
+        row-gap: 40px;
+        height: auto;
+        align-items: center;
+    }
+
+    .navigation-container{
+        position: absolute;
+        min-width: 100%;
+        left: 0;
+        padding: 20px 0;
+        top: 60px;
+        text-align: center;
+        z-index: 10;
+        background-color: white;
+        border-bottom: 1px solid black;
+        display: none;
+    }
+
+    .logo-container{
+        height: 2rem;
+    }
+
+    .nav-container{
+        height: 50px;
+        padding: 10px 10px 0;
+        align-items: center;
+    }
+
+    #course-text:hover .dropdown{
+        display: none;
+    }
+   
+    .hamburger{
+        display: block !important;
+        cursor: pointer;
+    }
+
+    .course-right-section{
+        display: none;
+    }
+
+    .dropdown{
+        top: 165px;
+        /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    background: #f6f6f6;
+    color: white;
+    width: 100vw;
+    padding: 0;
+    border: none;
+    }
+
+    .course-left-section ul li{
+        padding: 0;
+        border: none;
+    }
+
+    .course-left-section ul li{
+        color: black;
+        font-weight: 100 !important;
+    }
+
+    .course-detail-section{
+        padding: 0;
+        
+    }
+
+
 }
