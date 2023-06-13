@@ -353,42 +353,42 @@
         <div class="form-header-container">
             <div class="header-section">Application Form</div>
             <div class="form-container">
-                <form>
+                <form onsubmit="submitForm(event)" id="form">
                     <div class="input-section name-section">
-                    <input>
+                    <input type="text" required name="name" onchange="setFormValue(this.name,this.value)">
                     <label>Name</label>
                 </div>
 
                 <div class="input-section name-section">
-                    <input>
+                    <input type="email" required name="email" onchange="setFormValue(this.name,this.value)">
                     <label>Email Address</label>
                 </div>
 
                 <div class="input-section name-section">
-                    <input>
+                    <input type="tel" required maxlength="10" minlength="10" id="mobile-input" name="mobile" oninput="numberOnly()"  onchange="setFormValue(this.name,this.value)">
                     <label>Phone Number</label>
                 </div>
                 <div class="input-section name-section">
-                    <input>
+                    <input type="text" name="location" onchange="setFormValue(this.name,this.value)" required>
                     <label>Location</label>
                 </div>
 
                 <div class="training-course-select-section">
-                    <select>
-                        <option selected disabled>Select Your Course</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
+                    <select name="course" onchange="setFormValue(this.name,this.value)" required>
+                        <option selected disabled value="">Select Your Course</option>
+                        <option >Data Science</option>
+                        <option>Full Stack Development</option>
+                        <option>Software Testing</option>
+                        <option>Digital Marketing</option>
+                        <option>Network & Security</option>
                     </select>
 
-                    <select>
-                        <option selected disabled>Select Your Mode</option>
+                    <select name="mode" onchange="setFormValue(this.name, this.value)" required>
+                        <option selected disabled value="">Select Your Mode</option>
                         <option>Online</option>
                         <option>Offline</option>
-                        
-                    </select>
+                      </select>
+                      
                 </div>
 
                 <div class="subscibe">
@@ -396,7 +396,8 @@
                     <label>Subscribe to Our Uncodemy</label>
                 </div>
 
-                <div class="submit-btn">Submit</div>
+                <!-- <div class="submit-btn">Submit</div> -->
+                <input type="submit" class="submit-btn">
 
                 </form>
             </div>
@@ -1939,5 +1940,8 @@
 
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/7754bbda1a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 </html>

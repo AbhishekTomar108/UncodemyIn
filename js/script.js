@@ -518,43 +518,109 @@ function hideVideo(){
   myFrame.src = ""; 
 }
 
-// function toggleIframe() {
-//   var videoContainer =  document.getElementById('videoContainer');
-  
-  
-//   if (videoContainer.style.display==="none") {
-//     videoContainer.style.display = "block";
-//   } else {
-//     videoContainer.style.display = "none";
-//     myFrame.src = ""; // Clear the iframe source when hiding it
-//   }
-// }
 
-// code to run yt video
+// ---------- Form submit function---------
 
 
+let formValue = {
+  name:"",
+  email:"",
+  mobile:"",
+  location:"",
+  course:"",
+  mode:""
+}
 
-// Global variable to store the YouTube player object
-// Function to load the YouTube player
-// function loadYouTubePlayer() {
-//   // Create an iFrame element
-//   var iframe = document.createElement('iframe');
+function setFormValue(name,value){
 
-//   // Set the source of the iFrame to the YouTube video URL
-//   iframe.src = 'https://www.youtube.com/embed?v=Sg8XVnCneXE';
+ 
 
-//   // Set the width and height of the iFrame
-//   iframe.width = '640';
-//   iframe.height = '360';
 
-//   // Append the iFrame to a container element
-//   var container = document.getElementById('videoContainer');
-//   container.appendChild(iframe);
-// }
+  console.log('form running ',name,value)
 
-// // Attach the click event listener to the button
-// var playButton = document.getElementById('playButton');
-// playButton.addEventListener('click', function() {
-//   console.log('play is running  ')
-//   loadYouTubePlayer();
-// });
+  // formValue = {...formValue}
+  formValue[name]=value;
+
+
+  console.log('form value =',formValue)
+
+}
+
+function numberOnly() {
+
+  console.log('number only runnnin')
+  // Get element by id which passed as parameter within HTML element event
+  var element = document.getElementById('mobile-input');
+  // This removes any other character but numbers as entered by user
+  element.value = element.value.replace(/[^0-9]/gi, "");
+
+  if (element.value.length < 10) {
+    element.setCustomValidity('Phone number must have at least 10 digits.');
+  } else {
+    element.setCustomValidity('');
+  }
+}
+
+async function submitForm(event) {
+  event.preventDefault(); 
+  console.log("submitForm is running")
+
+  let data = new FormData();
+  data.append('name', formValue.name);
+  data.append('email', formValue.email);
+  data.append('mobile', formValue.mobile);
+  data.append('location', formValue.location);
+  data.append('course', formValue.course);
+  data.append('mode', formValue.mode);
+ 
+
+  try{
+    const response = await axios.post('http://localhost/formSubmitUncodemyIn.php', data);
+
+    
+    if(response.data===1){
+
+      
+  document.querySelector('.form-parent').style.display="none"
+  document.body.style.overflow='auto'
+  document.getElementById('overlay').style.display="none"
+  document.getElementById("form").reset();
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Congratulation!',
+        html:`You are one step closer to become a <span style="color:#ff5124">Full Stack Developer</span>. Our Team will connect you soon with Detail Information`,
+        showConfirmButton: false,
+        timer: 8000
+      })
+          //  setEmail('')
+          //   setMobile('')
+          //   setName('');
+    }
+
+    else{
+      console.log('error from else =',response.data)
+      alert("sorry some error is occured")
+    
+    }
+  }
+  catch(error) {
+    console.log('error =',error)
+    alert("sorry server issue occured please try again")
+  };
+
+
+  // document.querySelector('.form-parent').style.display="none"
+  // document.body.style.overflow='auto'
+  // document.getElementById('overlay').style.display="none"
+
+
+  // Swal.fire({
+  //   icon: 'success',
+  //   title: 'Congratulation!',
+  //   html:`You are one step closer to become a <span style="color:#ff5124">Full Stack Developer</span>. Our Team will connect you soon with Detail Information`,
+  //   showConfirmButton: false,
+  //   timer: 8000
+  // })
+
+}

@@ -691,10 +691,12 @@ form select {
 
 .submit-btn{
     text-align: center;
-    background: #ff5421;
+    background: #ff5421 !important;
     color: white;
-    padding: 15px 0;
+    padding: 15px 0 !important;
     border-radius: 2px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 /* Explore-course-style-css */
