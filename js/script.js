@@ -589,13 +589,11 @@ async function submitForm(event) {
       Swal.fire({
         icon: 'success',
         title: 'Congratulation!',
-        html:`You are one step closer to become a <span style="color:#ff5124">Full Stack Developer</span>. Our Team will connect you soon with Detail Information`,
+        html:`You are one step closer to have a <span style="color:#ff5124">Career Session</span>. with our Experts Our Team will connect you soon with Detail Information`,
         showConfirmButton: false,
         timer: 8000
       })
-          //  setEmail('')
-          //   setMobile('')
-          //   setName('');
+         
     }
 
     else{
