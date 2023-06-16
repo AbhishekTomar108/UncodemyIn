@@ -485,12 +485,12 @@ function showNavigation(){
   }
 }
 
-function showVideo(){
+function showVideo(url){
 
   
 
   var myFrame = document.querySelector("iframe");
-  myFrame.src = "https://www.youtube.com/embed/2m3nmDoCdQo";
+  myFrame.src = `${url}`;
 
   let videoContainer = document.getElementById('videoContainer')
   document.getElementById('videoContainer').style.display="block"

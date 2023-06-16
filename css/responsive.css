@@ -16,7 +16,7 @@
         font-size: 20px;
     }
 
-    .container{
+    .main-container{
         width: 95vw;
     } 
     .certificate-container{
@@ -24,7 +24,7 @@
     } 
 
     .banner-container{
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     .alumni-container{
@@ -242,8 +242,12 @@
        
     }
 
-    .placement-company img{
+    /* .placement-company img{
         height: 65%;
+    } */
+
+    .placement-company img{
+        height: 10px;
     }
     .placement-company
     {
@@ -362,13 +366,37 @@
     .review-container{
         margin-top: 50px;
     }
+    
+    .footer-content{
+        flex-direction: column;
+        row-gap: 30px;
+        margin-top: 50px;
+    }
 
+    .section-2 h3{
+
+        border-bottom: 1px solid white;
+    }
+
+    .social-icon-container{
+        margin-bottom: 20px;
+    }
+
+    .footer-course-section{
+        margin-bottom: 20px !important;
+    }
 }
+
 
 
 
 @media screen and (max-width:365px)
 {
+
+    .course-card-section span{
+        font-size: 10px;
+    }
+
     .certified-logo img{
         width: 6%;
     }
@@ -394,13 +422,13 @@
     }
 
     .scaler-reciper-card{
-        width: 250px;
+        width: 300px;
     }
 
-    .inner-card{
+    /* .inner-card{
         left: 13px;
         right: 13px;
-    }
+    } */
 }
 
 @media screen and (min-width:781px) and (max-width:1200px){
@@ -454,7 +482,7 @@
         min-width: 100%;
         left: 0;
         padding: 20px 0;
-        top: 60px;
+        top: 50px;
         text-align: center;
         z-index: 10;
         background-color: white;
