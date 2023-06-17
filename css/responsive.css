@@ -25,11 +25,24 @@
 
     .banner-container{
         margin-top: 50px;
+        padding: 10px 0;
     }
 
     .alumni-container{
         width: auto;
         padding: 0 10px;
+    }
+
+
+    /* ----------- pop-up-form container---------- */
+
+    .pop-up-form-container{
+        width: 90vw;
+        left: 5%;
+    }
+
+    .form-section{
+        padding: 15px;
     }
 
     /* Banner-style-css */
@@ -75,7 +88,8 @@
 
 
     .form-main-container{
-        width: 80vw;
+        width: 90vw;
+        padding: 5px 15px;
     }
 
     .training-course-select-section{
@@ -94,6 +108,8 @@
     .form-container form{
         row-gap: 15px;
     }
+
+
 
 
     /* Career-Section-style-css */
@@ -385,6 +401,40 @@
     .footer-course-section{
         margin-bottom: 20px !important;
     }
+
+
+    /* footer form section */
+
+    .footer-form{
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 0 10px;
+    }
+
+    .footer-main-form-container{
+        width: auto;
+    }
+
+
+    /* contact us styling */
+
+    .query-container{
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .office-details-conatainer{
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .office-thumb{
+        max-width: none;
+    }
+
+    .contact-banner-container{
+        margin-top: 50px;
+    }
 }
 
 
@@ -496,7 +546,7 @@
 
     .nav-container{
         height: 50px;
-        padding: 10px 10px 0;
+        padding: 10px 10px ;
         align-items: center;
     }
 
@@ -538,6 +588,13 @@
     .course-detail-section{
         padding: 0;
         
+    }
+
+
+    /* contact style section */
+
+    .banner-text{
+        font-size: 12px;
     }
 
 

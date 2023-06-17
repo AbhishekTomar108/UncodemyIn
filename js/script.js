@@ -211,6 +211,23 @@ let alumniInterval = null
 
 window.onload = function() {
 
+  var dtToday = new Date();
+
+  var month = dtToday.getMonth() + 1;
+  var day = dtToday.getDate();
+  var year = dtToday.getFullYear();
+  if(month < 10)
+      month = '0' + month.toString();
+  if(day < 10)
+      day = '0' + day.toString();
+  
+  var maxDate = year + '-' + month + '-' + day;
+  const inputDate = document.getElementById('inputdate');
+  inputDate.setAttribute('min',maxDate)
+
+
+
+
   var digits = document.querySelectorAll('.learner-number .digit');
 digits.forEach(function(digit, index) {
   digit.style.animation = "fallingEffect 1s ease-in-out";
@@ -398,6 +415,30 @@ function expandText(index) {
 //   textElement = textElement.substr(0,textElement.length)
 // }
   // textElement.classList.toggle('expanded');
+}
+
+
+
+function showPopUpForm(){
+
+  
+  const formConatiner = document.querySelector('.pop-up-form-container')
+  document.querySelector('.pop-up-form-container').style.display="block"
+  document.querySelector('.pop-up-form-container').style.top="3%"
+
+  formConatiner.style.animation = "fallingEffect .5s ease-in-out";
+  formConatiner.style.animationFillMode = "forwards";
+  document.body.style.overflow='hidden'
+  document.getElementById('overlay').style.display="block"
+}
+
+
+
+function hidePopUpForm(){
+
+  document.querySelector('.pop-up-form-container').style.display="none"
+  document.body.style.overflow='auto'
+  document.getElementById('overlay').style.display="none"
 }
 
 
@@ -608,17 +649,6 @@ async function submitForm(event) {
   };
 
 
-  // document.querySelector('.form-parent').style.display="none"
-  // document.body.style.overflow='auto'
-  // document.getElementById('overlay').style.display="none"
-
-
-  // Swal.fire({
-  //   icon: 'success',
-  //   title: 'Congratulation!',
-  //   html:`You are one step closer to become a <span style="color:#ff5124">Full Stack Developer</span>. Our Team will connect you soon with Detail Information`,
-  //   showConfirmButton: false,
-  //   timer: 8000
-  // })
-
 }
+
+

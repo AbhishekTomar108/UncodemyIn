@@ -205,7 +205,7 @@
              <h2>Be future ready with our <span style="color:#ff5421;">Job Oriented</span> Professional Courses</h2>
              <span style="margin-bottom:30px; color: #ff5421;">Learn Anything Anytime Anywhere</span>
              <div class="btn-container">
-                <button id="get-started-btn">Get Started</button>
+                <button id="get-started-btn" onclick="showPopUpForm()">Get Started</button>
                 <button id="browse-course-btn">Browse Course</button>
              </div>
 
@@ -250,6 +250,50 @@
 
     </div>
 </div>
+
+<div class="pop-up-form-container">
+    <div class="form-section">
+        <i class="fa-sharp fa-solid fa-square-xmark"  style="color: #ff5421;" onclick="hidePopUpForm()"></i>
+        <div class="form-top-head">
+            Application Form
+        </div>
+        <form>
+            <input type="text" placeholder="Enter Your Name" required name="name">
+            <input type="tel" placeholder="Enter Your Phone No." required name="name">
+            <input type="email" placeholder="Enter Your Email" required name="name">
+
+            <select name="course" onchange="setFormValue(this.name,this.value)" required>
+                <option selected disabled value="">Select Your Course</option>
+                <option >Data Science</option>
+                <option>Full Stack Development</option>
+                <option>Software Testing</option>
+                <option>Digital Marketing</option>
+                <option>Network & Security</option>
+            </select>
+            
+            <div class="schedule-date schedule">
+            <input type="date" name="data" id="inputdate">
+            <label>Scheduled Date*</label>
+        </div> 
+
+        <div class="schedule-time">
+            <div class="time-part">
+            <input type="time" name="fromTime">
+            <label>From*</label>
+        </div>
+
+        <div class="time-part">
+            <input type="time" name="toTime">
+            <label>To*</label>
+        </div>
+        </div>
+
+        <input type="submit" class="submit-btn">
+
+        </form>
+    </div>
+</div>
+
 
 <div class="partner">
     <h3>Partner with leading universities and companies</h3>
@@ -397,7 +441,7 @@
                 </div>
 
                 <div class="subscibe">
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                     <label>Subscribe to Our Uncodemy</label>
                 </div>
 
@@ -1827,80 +1871,47 @@
        </div>
        </div>
 
-    
-       
-
-       <!-- form Section -->
-<!-- 
-       <div class="form-main-container main-container">
-        <i class="fa-sharp fa-solid fa-square-xmark"  style="color: #ff5421;" onclick=""></i>
-
-        <div class="form-header-container">
-            <div class="header-section">Application Form</div>
-            <div class="form-container">
-                <form>
-                    <div class="input-section name-section">
-                    <input>
-                    <label>Name</label>
-                </div>
-
-                <div class="input-section name-section">
-                    <input>
-                    <label>Email Address</label>
-                </div>
-
-                <div class="input-section name-section">
-                    <input>
-                    <label>Phone Number</label>
-                </div>
-                <div class="input-section name-section">
-                    <input>
-                    <label>Location</label>
-                </div>
-
-                <div class="training-course-select-section">
-                    <select>
-                        <option selected disabled>Select Your Course</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                        <option>Data Science</option>
-                    </select>
-
-                    <select>
-                        <option selected disabled>Select Your Mode</option>
-                        <option>Online</option>
-                        <option>Offline</option>
-                        
-                    </select>
-                </div>
-
-                <div class="subscibe">
-                    <input type="checkbox">
-                    <label>Subscribe to Our Uncodemy</label>
-                </div>
-
-                <div class="submit-btn">Submit</div>
-
-                </form>
-            </div>
-        </div>
-       </div> -->
-
 
 <!-- ----------- Form Container -------------- -->
 
 
 
 <div class="form-parent footer-form">
-    <div class="form-main-container main-container">
+    <div class="price-queries-container">
+        <h2>Course Price</h2>
+        <div class="placement-project-thumb">
+            <span>Placements</span>
+            <span>Access to real-life 40 industry projects</span>
+            <span>Data Science projects</span>
+            <span>MERN FullStack projects</span>
+            <span>6 Months online Internship part of the core curriculum</span>
+        </div>
+
+        <h2>Any Queries </h2>
+        <h3>Contact Us</h3>
+
+        <p>Chat With Us</p>
+        <div class="queries-btn">
+            <button id="enrolment">Enrolment Queries</button>
+            <button id="payment">Payment Queries</button>
+        </div>
+
+       <div class="call-whatsapp">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call or</span>
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+       </div>
+
+       <button id="call-number">+91 7701928515</button>
+    </div>
+    <div class="form-main-container footer-main-form-container">
        
 
         <div class="form-header-container">
             <div class="header-section">Application Form</div>
-            <div class="form-container">
-                <form onsubmit="submitForm(event)" id="form">
+            <div class="form-container footer-form-container">
+                <form onsubmit="submitForm(event)" id="form" class="footer-form">
                     <div class="input-section name-section">
                     <input type="text" required name="name" onchange="setFormValue(this.name,this.value)">
                     <label>Name</label>
@@ -1939,12 +1950,12 @@
                 </div>
 
                 <div class="subscibe">
-                    <input type="checkbox">
+                    <input type="checkbox" id="checkbox-btn" required>
                     <label>Subscribe to Our Uncodemy</label>
                 </div>
 
                 <!-- <div class="submit-btn">Submit</div> -->
-                <input type="submit" class="submit-btn">
+                <input type="submit" class="submit-btn" id="submitBtn">
 
                 </form>
             </div>
@@ -1953,7 +1964,7 @@
     </div>
 
 
-       <head>
+
 
  
        <footer>
@@ -2148,11 +2159,7 @@
                                       </div>
                                 </div>
               </div>
-              <div class="col-lg-12">
-                 <div class="copyright">
-                    <p> &copy; 2023. All rights reserved by UnCodemy</p>
-                 </div>
-              </div>
+             
            </div>
         </div>
      </section>
@@ -2164,7 +2171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                    <p class="m-0">Copyright &copy; <a class="text-white" href="#">Your Site Name</a>. All Rights
+                    <p class="m-0">Copyright &copy; <a class="text-white" href="#">UnCodemy</a>. All Rights
                         Reserved.
                     </p>
                 </div>
@@ -2185,7 +2192,6 @@
     <!-- Footer End -->
 
 </footer>
-</head>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
@@ -2194,6 +2200,7 @@
     <script src="https://kit.fontawesome.com/7754bbda1a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </body>
 </html>
