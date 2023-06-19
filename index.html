@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta property="og:image" content="https://uncodemydevin.netlify.app/image/logo.png">
+    <meta name="og:description" content="Global Training Institute - Data Science, AI, Machine Learning, Python" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uncodemy-Course</title>
+    <title>Uncodemy - Best Global IT Training &amp; Certification Institute for Students and Professionals.</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
@@ -55,7 +56,7 @@
                 <div class="navigation-section">
                     <ul>
                         <a href="/"><li>Home</li></a>
-                        <li>About </li>
+                        <a href="about-us.html"> <li>About </li></a>
                         <li id="course-text"> <label onclick="showDropDown()" style="cursor: pointer;">Courses</label> <i class="fa-solid fa-caret-down" id="dropdown-arrow"></i>
                         
                         
@@ -257,12 +258,12 @@
         <div class="form-top-head">
             Application Form
         </div>
-        <form>
-            <input type="text" placeholder="Enter Your Name" required name="name">
-            <input type="tel" placeholder="Enter Your Phone No." required name="name">
-            <input type="email" placeholder="Enter Your Email" required name="name">
+        <form onsubmit="submitPopUpForm(event)">
+            <input type="text" placeholder="Enter Your Name*" required name="name" onchange="setPopUpFormValue(this.name, this.value)">
+            <input type="tel" required maxlength="10" minlength="10" id="mobile-input" name="mobile" oninput="numberOnly()" placeholder="Enter Your Phone No.*" required name="name" onchange="setPopUpFormValue(this.name, this.value)">
+            <input type="email" placeholder="Enter Your Email*" required name="email" onchange="setPopUpFormValue(this.name, this.value)">
 
-            <select name="course" onchange="setFormValue(this.name,this.value)" required>
+            <select name="course" required onchange="setPopUpFormValue(this.name, this.value)">
                 <option selected disabled value="">Select Your Course</option>
                 <option >Data Science</option>
                 <option>Full Stack Development</option>
@@ -272,18 +273,18 @@
             </select>
             
             <div class="schedule-date schedule">
-            <input type="date" name="data" id="inputdate">
+            <input type="date" name="date" id="inputdate" required onchange="setPopUpFormValue(this.name, this.value)">
             <label>Scheduled Date*</label>
         </div> 
 
         <div class="schedule-time">
             <div class="time-part">
-            <input type="time" name="fromTime">
+            <input type="time" name="fromTime" required onchange="setPopUpFormValue(this.name, this.value)">
             <label>From*</label>
         </div>
 
         <div class="time-part">
-            <input type="time" name="toTime">
+            <input type="time" name="toTime" required onchange="setPopUpFormValue(this.name, this.value)">
             <label>To*</label>
         </div>
         </div>
@@ -1898,12 +1899,17 @@
 
        <div class="call-whatsapp">
         <i class="fa-solid fa-phone"></i>
-        <span>Call or</span>
+        <span>Call</span>
+    </div>
+        <button id="call-number">+91 7701928515</button>
+       
+
+        <div class="call-whatsapp">
         <i class="fa-brands fa-whatsapp"></i>
         <span>WhatsApp</span>
-       </div>
-
-       <button id="call-number">+91 7701928515</button>
+    </div>
+        <button id="call-number">+91 7701928515</button>
+      
     </div>
     <div class="form-main-container footer-main-form-container">
        
@@ -1977,9 +1983,7 @@
                     <a href="index.html" class="navbar-brand">
                         <h1 class="mt-n2 text-uppercase text-white"><img src="image/uncodemyIcon.png">Uncodemy</h1>
                     </a>
-                    <p class="m-0">Accusam nonumy clita sed rebum kasd eirmod elitr. Ipsum ea lorem at et diam est,
-                        tempor rebum ipsum sit ea tempor stet et consetetur dolores. Justo stet diam ipsum lorem vero
-                        clita diam</p>
+                    <p class="m-0">Uncodemy is a team of high-class working professionals associated with a Fortune 500 company. We are on a mission to employ millions. if you want a job, or career change, Uncodemy is the right place for you. We will teach you how to work with the latest technology.</p>
                 </div>
                 <div class="col-md-6 mb-5">
                     <h3 class="text-white mb-4">Newsletter</h3>
@@ -1997,35 +2001,43 @@
             <div class="row footer-middle">
                 <div class="col-md-4 mb-5">
                     <h3 class="text-white mb-4">Get In Touch</h3>
-                    <p><i class="fa fa-map-marker-alt mr-2"></i>B 14-15, Udhyog Marg, Block B, Sector 1, Noida, Uttar Pradesh 201301</p>
-                    <p><i class="fa fa-phone-alt mr-2"></i>+91 7701928515</span></p>
-                    <p><i class="fa fa-envelope mailto:mr-2"></i>info@uncodemy.com</p>
-                    <div class="d-flex justify-content-start mt-4 social-icon-container">
-                        <a class="text-white mr-4" href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-facebook-f"></i></a>
-                        <a class="text-white mr-4" href="#"><i class="fab fa-2x fa-linkedin-in"></i></a>
-                        <a class="text-white" href="#"><i class="fab fa-2x fa-instagRani"></i>i</a>
-                    </div>
+                   
+                    <div class="footer-flex">
+                        <i class="fa fa-map-marker-alt mr-2"></i> <p>B 14-15, Udhyog Marg, Block B, Sector 1, Noida, Uttar Pradesh 201301</p>
                 </div>
-                <div class="col-md-4 mb-5 footer-course-section">
-                    <h3 class="text-white mb-4">Our Courses</h3>
-                    <div class="d-flex flex-column justify-content-start">
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Web Design</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Apps Design</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marketing</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Research</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>SEO</a>
-                    </div>
+
+               <div class="footer-flex">  <i class="fa fa-phone-alt mr-2"></i> <p>+91 7701928515</span></p></div>
+               <div class="footer-flex"> <i class="fa fa-envelope mailto:mr-2"></i> <p>info@uncodemy.com</p></div>
+               <hr>
+
+               <div class="footer-flex">
+                <i class="fa fa-map-marker-alt mr-2"></i> <p>
+                    USA- 2439 Bagwell Avenue, Gainesville, Florida-32601</p>
+        </div>
+
+       <div class="footer-flex">  <i class="fa fa-phone-alt mr-2"></i> <p>+1-718 416 9028</span></p></div>
+       <hr>
+       <div class="footer-flex">
+        <i class="fa fa-map-marker-alt mr-2"></i> <p>
+            UK - 68 Southern Way, North Lopham, London IP22 0HE</p>
+</div>
+
+
+<div class="footer-flex">  <i class="fa fa-phone-alt mr-2"></i> <p>+44 20 3287 0088</span></p></div>
+<hr>
+                
                 </div>
+                
+    
                 <div class="col-md-4 mb-5">
                     <h3 class="text-white mb-4">Quick Links</h3>
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
                         <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Terms &
                             Condition</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Regular FAQs</a>
-                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Help & Support</a>
-                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Refund Policy</a>
+                        <a class="text-white-50 mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Fee Payments</a>
+                        <a class="text-white-50" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -2037,74 +2049,6 @@
  
     <section class="footer bg-dark">
         <div class="container">
-           <div class="footer-content-box">
-              <div class="row">
-                 <div class="col-lg-3 col-md-12">
-                    <div class="footer-content-1">
-                       <div class="section-1">
-                          <a href="">
-                                               <img src="image/uncodemy-logo.jpg" alt="DataTrained" style="max-width: 170px; margin-bottom: 15px;">
-                                               </a>
-                          <p>Lorem, ipsum dolor sit amet consectetur</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur</p>
-                          <div class="drop">
-                          
-                                                  </div>
-                      
-                       </div>
-                    </div>
-                 </div>
-                 <div class="col-lg-9 col-md-12">
-                    <div class="footer-content">
-                       <div class="section-2">
-                          <h3>Company</h3>
-                          <ul>
-                             <li><a href="#">About Us</a></li>
-                             <li><a href="#">Press Release</a></li>
-                             <li><a href="#">Career</a></li>
-                             <li><a href="#">Success Stories</a></li>
-                             <li><a href="#" target="_blank">Blogs</a></li>
-                                                                          </ul>
-                       </div>
-                       <div class="section-2">
-                          <h3>Placement</h3>
-                          <ul>
-                             <li><a href="">Placement Record</a></li>
-                             <li><a href="">Hire our Students</a></li>
-                             <li><a href="">Become a Mentor</a></li>
-                             <li><a href="">College</a></li>
-                          </ul>
-                       </div>
-                       <div class="section-2">
-                          <h3>Learner's Zone</h3>
-                          <ul>
-                             <li><a href="" target="_blank">UnCodemy Academy</a></li>
-        
-                             <li><a href="">Hackathons</a></li>
-                             <li><a href="" target="_blank">Connect with Career Coach</a></li>
-                             <li><a href="" target="_blank">UnCodemy EMIs</a></li>
-
-                             <li><a href="" target="_blank">Verify Certificate</a></li>
-                             <li><a href="" target="_blank">Register for DUAT</a></li>
-
-                             
-                          </ul>
-                       </div>
-                       <div class="section-2">
-                          <h3>Terms</h3>
-                          <ul>
-                             <li><a href="">Privacy Policy</a></li>
-                                                     <li><a href="">Terms & Conditions</a></li>
-                             <li><a href="">Customer Remediation</a></li>
-                             <li><a href="">Contact Us</a></li>
-                          </ul>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
 
            <hr style="background-color: white;">
 
