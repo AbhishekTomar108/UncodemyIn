@@ -1,7 +1,15 @@
 @media (max-width: 900px) {
-    #banner {
-        height: 40vh;
-        padding: 0 15px;
+   
+    #banner::after{
+        font-size: 20px;
+    }
+
+    #banner{
+        margin-bottom: 50px;
+    }
+
+    .banner-image-container{
+        height: auto;
     }
 
     .main_div p {
@@ -114,27 +122,17 @@
 }
 
 
-@media (max-width: 710px) {
+/* @media (max-width: 710px) {
     #banner {
-        height: 30vh;
-        padding: 0 15px;
+        height: 218px;
+       
     }
 
-}
+} */
 
-@media (max-width: 550px) {
-    #banner {
-        height: 20vh;
-        padding: 0 15px;
-    }
-
-}
 
 @media (max-width: 460px) {
-    #banner {
-        height: 20vh;
-        padding: 0 15px;
-    }
+   
 
     .card11,
     .card22,

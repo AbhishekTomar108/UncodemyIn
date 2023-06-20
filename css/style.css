@@ -8,6 +8,10 @@ body{
     padding: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 button{
     border-radius: 5px;
     cursor: pointer;
@@ -1739,7 +1743,12 @@ color: white;
 
 
 footer{
-    background-color: #343a40!important;
+    background-color: #0e0e0e !important;
+    margin-top: 70px;
+}
+
+.bg-dark{
+    background-color: transparent !important;
 }
 
 .footer-form{
@@ -1774,6 +1783,13 @@ footer{
     padding: 15px 30px ;
     border-radius: 5px;
 }
+
+.price-queries-container button:hover{
+
+    background-color: white;
+    color: #080808b5;
+}
+
 
 .placement-project-thumb{
     display: flex;
@@ -1903,13 +1919,46 @@ footer{
 }
 
 .footer-middle{
-    margin-top: 50px;
     row-gap: 30px;
     justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.footer-middle p{
+    font-family:'Roboto', sans-serif;
+    max-width: 320px;
+    line-height: 22px;
+    font-size: 14px;
+    color: white;
+}
+
+
+.footer-thumb{
+    width: fit-content;
+    
+}
+
+.footer-thumb-1 p{
+    line-height: 25px;
+    font-size: 14px;
+    color: white;
+}
+
+.footer-thumb a{
+    cursor: pointer;
+    font-size: 14px;
+    color: white !important;
 }
 
 .footer-middle hr{
     background-color: white;
+}
+
+
+.col-md-4 h3{
+    display: flex;
+    height: 30px;
+    align-items: center;
 }
 
 /* .footer-content-box{

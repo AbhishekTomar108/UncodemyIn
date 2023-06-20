@@ -409,8 +409,38 @@ let popUpFormValue ={
 
 
 function setPopUpFormValue(name, value){
+
+  if(name==='fromTime' || name==='toTime'){
+    var timeSplit = value.split(':'),
+    hours,
+    minutes,
+    meridian;
+  hours = timeSplit[0];
+  minutes = timeSplit[1];
+  if (hours > 12) {
+    meridian = 'PM';
+    hours -= 12;
+
+    if(hours<10){
+      hours = `0${hours}`
+    }
+  } else if (hours < 12) {
+    meridian = 'AM';
+    if (hours == 0) {
+      hours = 12;
+    }
+  } else {
+    meridian = 'PM';
+  }
+
+  value = `${hours} : ${minutes} ${meridian}`
+  popUpFormValue[name] = value
+  }
+
+  else{
  
   popUpFormValue[name] = value
+  }
   console.log('pop up value =',popUpFormValue)
 }
 
@@ -642,12 +672,14 @@ async function submitPopUpForm(event) {
   try{
     const response = await axios.post('http://localhost/DemoDetailForm.php', data);
 
+
     
     if(response.data===1){
 
       document.querySelector('.pop-up-form-container').style.display="none"
       document.body.style.overflow='auto'
       document.getElementById('overlay').style.display="none"
+      document.getElementById("form").reset();
       
 
       Swal.fire({
@@ -674,4 +706,45 @@ async function submitPopUpForm(event) {
 
 }
 
+
+//  ---------- payment gateway -----------
+
+
+async function paymentGateway(){
+  console.log('payment running')
+
+  try{
+    const response = await axios.post('http://localhost/payment.php');
+
+    console.log(response)
+  }
+
+  catch{
+
+  }
+}
+
+
+function fullScreen(){
+  console.log('full screen running')
+
+  var event = new KeyboardEvent('keydown', {
+    key: 'F11',
+    keyCode: 122,
+    which: 122,
+    code: 'F11',
+    location: 0,
+    ctrlKey: false,
+    shiftKey: false,
+    altKey: false,
+    metaKey: false,
+    repeat: false,
+    isComposing: false,
+    charCode: 0,
+    char: ''
+  });
+
+  document.dispatchEvent(event);
+
+}
 

@@ -389,6 +389,11 @@
         margin-top: 50px;
     }
 
+    .footer-middle{
+        flex-direction: column;
+        padding-left: 30px;
+    }
+
     .section-2 h3{
 
         border-bottom: 1px solid white;
